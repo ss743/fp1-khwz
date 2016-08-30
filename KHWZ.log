@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.5)  29 AUG 2016 18:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.5)  30 AUG 2016 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1589,7 +1589,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-<figures/siegel.png, id=44, 414.54875pt x 414.54875pt>
+<figures/siegel.png, id=56, 414.54875pt x 414.54875pt>
 File: figures/siegel.png Graphic file (type png)
 
 <use figures/siegel.png>
@@ -1648,11 +1648,11 @@ Package babel Info: Redefining ngerman shorthand "~
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/siegel.png>] (./
 KHWZ.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 10.
+(Font)              <6> on input line 5.
 )
 \tf@toc=\write4
 \openout4 = `KHWZ.toc'.
@@ -1709,144 +1709,211 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 94.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 97.
+(babel)             in language append on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 97.
+(babel)             in language append on input line 95.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 97.
- [3]
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 97.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alpha' on input line 97.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 97.
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 98.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 98.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\beta' on input line 98.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 98.
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 101.
+(babel)             in language append on input line 99.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 101.
+(babel)             in language append on input line 99.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 101.
+(babel)             in language append on input line 100.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 101.
+(babel)             in language append on input line 100.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 100.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 103.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 103.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 103.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 103.
+[3]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 104.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 104.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 107.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 107.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 107.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 107.
  [4]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 102.
+(babel)             in language append on input line 108.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 102.
+(babel)             in language append on input line 108.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 106.
+(babel)             in language append on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 106.
+(babel)             in language append on input line 112.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 106.
+(babel)             in language append on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 106.
+(babel)             in language append on input line 112.
  [5]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 107.
+(babel)             in language append on input line 113.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 107.
+(babel)             in language append on input line 113.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 110.
+(babel)             in language append on input line 116.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 110.
+(babel)             in language append on input line 116.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 110.
+(babel)             in language append on input line 116.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 110.
+(babel)             in language append on input line 116.
  [6]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 111.
+(babel)             in language append on input line 117.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 111.
+(babel)             in language append on input line 117.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 114.
+(babel)             in language append on input line 120.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 114.
+(babel)             in language append on input line 120.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 114.
+(babel)             in language append on input line 120.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 114.
+(babel)             in language append on input line 120.
  [7]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 115.
+(babel)             in language append on input line 121.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 115.
+(babel)             in language append on input line 121.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 117.
+(babel)             in language append on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 117.
+(babel)             in language append on input line 123.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 127.
+(babel)             in language append on input line 133.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 127.
+(babel)             in language append on input line 133.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 127.
+(babel)             in language append on input line 133.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 127.
+(babel)             in language append on input line 133.
  [8]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 128.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 128.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 134.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 134.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 134.
+(babel)             in language append on input line 140.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 134.
+(babel)             in language append on input line 140.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 140.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 140.
  [9] (./KHWZ.lof)
 \tf@lof=\write5
 \openout5 = `KHWZ.lof'.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 140.
+(babel)             in language append on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 140.
+(babel)             in language append on input line 146.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 140.
+(babel)             in language append on input line 146.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 140.
+(babel)             in language append on input line 146.
  [10]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 156.
+LaTeX Warning: Empty `thebibliography' environment on input line 162.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 164.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 164.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 164.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 158.
+(babel)             in language append on input line 164.
 [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (./KHWZ.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
-Package rerunfilecheck Info: File `KHWZ.out' has not changed.
-(rerunfilecheck)             Checksum: 04DABD2172F06DCFF5ACE240BC8AA8A1;524.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
+
+
+Package rerunfilecheck Warning: File `KHWZ.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `KHWZ.out':
+(rerunfilecheck)             Before: 31F5CB8160077AAF5CBC487FCEFFCBF7;733
+(rerunfilecheck)             After:  86288A1156C93DD12F6A78722CB39558;878.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 16525 strings out of 493304
- 273827 string characters out of 6139872
- 358536 words of memory out of 5000000
- 19706 multiletter control sequences out of 15000+600000
+ 16533 strings out of 493304
+ 273975 string characters out of 6139872
+ 358542 words of memory out of 5000000
+ 19709 multiletter control sequences out of 15000+600000
  53048 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  45i,11n,43p,10425b,593s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
-public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on KHWZ.pdf (13 pages, 125065 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share
+/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.p
+fb>
+Output written on KHWZ.pdf (13 pages, 153513 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
