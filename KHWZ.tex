@@ -101,7 +101,16 @@ Zum Bestimmen der Halbwertszeit werden zunächst die Energie-Spektren von $^57$C
 \newpage
 \section{Theoretische Grundlagen}
 \subsection{Zerfallsgesetz}
-
+Der radioaktive Zerfall ist ein statistischer Prozess d.h. der genaue Zeitpunkt zu dem ein Kern zerfällt kann nicht vorhergesagt werden, stattdessen wird mit Wahrscheinlichkeiten gearbeitet. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen ANzahl $N$ der Atome.
+\[\frac{dN}{dt}=-\lambda N\]
+wobei $\lambda$ die Zerfallskonstante ist, welche den Bruchteil der zu Beginn vorhandenen Kerne, die pro Zeiteinheit zerfallen beschreibt. Zerfallskonstanten einzelner Zerfälle addieren sich, zerfällt ein Kern auf mehrere Arten. Durch Lösen dieser Differentialgleichung erhält man die Anzahl der Kerne $N$ zum Zeitpunkt $t$.
+\[N(t)=N_0e^{-\lambda t}\hspace{0.5cm}\]
+wobei $N_0=N(t=0)$ die anfängliche Anzahl der Kerne beschreibt. Hieraus lässt sich dann die mittlere Lebensdauer $\tau$ bestimmen:
+\[\tau=\frac{1}{\lambda}\]
+welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:
+\[T_{1/2} = ln2\cdot \tau = \frac{ln2}{\lambda}\]
+Eine weitere wichtige Größe ist die Aktivität $A$ welche die Anzahl der zerfälle pro Sekunde beschreibt und in Becquerel ( $Bq=1/s$) gemeesen wird:
+\[A = \lambda N = \frac{N}{\tau} = \frac{ln2 N}{T_{1/2}}\]
 \subsection{Radioaktive Zerfälle}
 Instabile Atomkerne gehen, je nach Art des Zerfalls, unter Aussendung von ionisierender Strahlung und Aussendung von Teilchen spontan in einen anderen Atomkern über. Im Folgenden werden die verschiedenen Arten radioaktiver Zerfälle erläutert.
 \subsubsection{$\alpha$-Zerfall}
