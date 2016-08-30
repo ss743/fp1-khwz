@@ -2,6 +2,11 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}
 \contentsline {section}{\numberline {2}Aufgabenstellung}{2}{section.2}
 \contentsline {section}{\numberline {3}Theoretische Grundlagen}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Radioaktive Zerf\IeC {\"a}lle}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}$\alpha $-Zerfall}{3}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}$\beta $-Zerfall}{3}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Elektroneneinfang}{3}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}$\gamma $-Zerfall}{3}{subsubsection.3.1.4}
 \contentsline {section}{\numberline {4}Versuchsaufbau}{4}{section.4}
 \contentsline {section}{\numberline {5}Versuchsdurchf\IeC {\"u}hrung}{5}{section.5}
 \contentsline {section}{\numberline {6}Auswertung}{6}{section.6}
