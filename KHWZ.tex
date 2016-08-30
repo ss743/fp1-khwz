@@ -92,7 +92,7 @@ In diesem Versuch soll die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe b
 
 \newpage
 \section[Aufgabenstellung]{Aufgabenstellung}%$^{\cite{anleitung}}$}
-Zum Bestimmen der Halbwertszeit werden zunächst die Energie-Spektren von $^57$Co und $241$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
+Zum Bestimmen der Halbwertszeit werden zunächst die Energie-Spektren von $^57$Co und $^241$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
 
 
 
@@ -163,6 +163,11 @@ Um im Szintillationszähler detektiert werden zu können, muss die $\gamma$-Stra
  
  \subsubsection{Compton-Effekt}
  \subsection{Messprinzip}
+ \subsubsection{Messung der Zerfallsdauern}
+ Um die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe zu bestimmen, messen wir die einzelnen Lebensdauern der angeregten $^{57}$Fe-Atome. Der Zustand entsteht unter Emission eines $122,1$ keV-$\gamma$-Quants und zerfällt unter Emission eines $14,4$ keV-$\gamma$-Quants, so dass wir die Zeitmessung mit Detektion des $122,1$ keV-Photons starten und mit Detektion des $14,4$ keV-Photons beenden könnten. Bei diesem Verfahren allerdings tritt das Problem auf, dass nur ca. 10\% der $^{57}$Fe-Atome über $\gamma$-Zerfall und ca. 90\% über innere Konversion zerfallen. Wenn nun ein $122,1$ keV-Photon detektiert wird und kein dazugehöriges $14,4$ keV-Photon erzeugt wird, dann wird die Messung nicht beendet, wodurch die Totzeit vergrößert und die Messung verfälscht wird.
+ Um dieses Problem zu umgehen, benutzt man die Methode der verzögerten Koinzidenzen. Bei dieser Methode wird das Signal der $122,1$ keV-Photonen verzögert, so dass das Signal nach dem Signal der $14,4$ keV-Photonen ankommt. Dann wird das Signal der $14,4$ keV-Photonen als Start- und das der $122,1$ keV-Photonen als Stop-Signal verwendet. Die gemessene Differenz wird nun von der Verzögerung abgezogen, um die tatsächliche Lebensdauer zu erhalten.
+ Der radioaktive Zerfall ist ein statistischer Prozess (siehe <REFERENZ>), mit der Anzahl $N(t)$ der nach einer Zeit $t$ noch vorhandenen Kerne: $N(t)=N_0\exp({-\frac t \tau})$ Die gemessenen Zeiten $\Delta t$ folgen ebenso dieser Exponentialverteilung um die mittlere Lebensdauer $\tau$.
+ 
 \newpage
 \section{Versuchsaufbau}
 
