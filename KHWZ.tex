@@ -89,8 +89,8 @@ In diesem Versuch soll die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe b
 \\\\
 Zunächst werden die Energie-Spektren von $^{57}$Co und $^{241}$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
 
-
-
+\vskip 50pt
+\gra{Cobaldt-Zerfall}{Zerfallsschema von $^{57}$Co $^{\cite{anleitung}}$}
 %\newpage
 %\section[Aufgabenstellung]{Aufgabenstellung}%$^{\cite{anleitung}}$}
 %Zum Bestimmen der Halbwertszeit werden zunächst die Energie-Spektren von $^{}57$Co und $^{241}$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
@@ -174,12 +174,27 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \paragraph{Photomultiplier}
  Das Licht wird nun vom Szintillator über Lichtleiter zum Photomultiplier geleitet. Dieser wandelt die Lichtimpulse des Szintillators durch den Photoeffekt in elektrische Impulse um, welche proportional zur Lichtintensität sind und verstärkt diese durch Elektronenvervielfachung.
  
- 
 
  
 \newpage
-\section{Versuchsaufbau}
+\section{Versuchsaufbau- und durchführung}
+\subsection{Geräte}
 
+\paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
+\paragraph{Main Amplifier (MA)}
+Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen möglichst kurzen Puls, dessen Dauer amplituden-unabhängig ist. Die Pulshöhe ist dabei annähernd proportional zur deponierten Ladungsmenge im Szintillator. Der Hauptverstärker hat zwei verschiedene Ausgänge die entweder ein bipolares Signal (zeitsensible Messungen) oder ein unipolares Signal (Aufnahme der Spektren) liefern.
+\paragraph{Multi Channel Analyser}
+Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Pulshöhe (also von der im Szintillator deponierten Ladungsmenge ) einem Channel zu. Das so erhaltene Energiespektrum kann als Histogramm dargestellt werden.
+\paragraph{Single Channel Analyser}
+Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.
+\paragraph{Time to Amplitude Converter (TAC)} Der Time to Amplitude Converter erzeugt einen in der Höhe  zur Zeitdifferenz zwischen Start- und Stoppsignal proportionalen Rechteckpuls.
+
+\subsection{Aufnahme der Energiespektren}
+Zunächst werden die Energiespektren von Kobalt und Americium aufgenommen. Dabei muss das Spektrum jeweils von beiden Detektoren aufgenommen werden und zusätzlich beim Kobalt auch in beiden Orientierungen. So soll bestimmt werden, mit welchem Detektor nachher welcher Peak ($14,4$ keV bzw.$122$ keV) gemessen wird. Hierfür verwenden wir folgende Schaltung:
+\vskip 50 pt
+\gra{Schaltung 1}{Versuchsaufbau 1: Aufnahme der Energiespektren}
+\vskip 30 pt
+Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die 
 
 \newpage
 \section{Versuchsdurchführung}
@@ -224,11 +239,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
 \thispagestyle{empty}
 \begin{thebibliography}{9}
 
-%\bibitem{staat}
-%  Tobijas Kotyk,
-%  \emph{Versuche zur Radioaktivität im Physikalischen Fortgeschrittenen Praktikum an der Albert-Ludwigs-Universität Freiburg},
-%  Albert-Ludwigs-Universität, Freiburg,
-%  2005
+\bibitem{anleitung}
+ (Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
   
 
   
