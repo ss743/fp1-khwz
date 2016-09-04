@@ -26,7 +26,7 @@ plotgaus <- function(fitdata,bereich){
   mu<-fitdata["mu","Estimate"]
   sig<-fitdata["sig","Estimate"]
   
-  plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=T,col="red")
+  plot (function(x){C + N*exp(-(x-mu)^2/(2*sig^2))},bereich[1],bereich[2],add=TRUE,col="red")
   
 }
 
@@ -51,6 +51,5 @@ printfitdata <- function(fitdata,title=""){
   cat("+-")
   cat(ssig)
   cat("\n")
-  #cat("\n")
-  
+
 }

@@ -26,7 +26,7 @@ ef2data <- data.frame(x=1:256,y=ef2[[1]],sy=sqrt(ef2[[1]]))
 plottype <- "p"
 pointsize<- 0.6
 
-weighted <- FALSE
+weighted <- TRUE
 
 par(mfrow=c(1,2))
 
@@ -78,6 +78,7 @@ with(data=co2data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n"))
 bereich=c(150,250)
 fit=gausfit(co2data,bereich,weighted)
 plotgaus(fit,bereich)
+links1=fit
 title("linker Szintillator, Orientierung 1")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*10000)
@@ -88,9 +89,11 @@ with(data=co3data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n"))
 bereich=c(175,250)
 fit=gausfit(co3data,bereich,weighted)
 plotgaus(fit,bereich)
+rechts1a=fit
 bereich=c(10,30)
 fit=gausfit(co3data,bereich,weighted)
 plotgaus(fit,bereich)
+rechts1b=fit
 title("rechter Szintillator, Orientierung 1")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*100000)
@@ -101,6 +104,7 @@ with(data=co5data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n"))
 bereich=c(150,250)
 fit=gausfit(co5data,bereich,weighted)
 plotgaus(fit,bereich)
+links2=fit
 title("linker Szintillator, Orientierung 2")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*20000)
@@ -111,10 +115,21 @@ with(data=co4data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n",cex=0.2)
 bereich=c(150,250)
 fit=gausfit(co4data,bereich,weighted)
 plotgaus(fit,bereich)
+rechts2=fit
 title("rechter Szintillator, Orientierung 2")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*20000)
 grid()
+
+cat("\n\nCobalt \n\n")
+cat(" links:\n")
+printfitdata(links1,"Orientierung 1")
+printfitdata(links2,"Orientierung 2")
+cat("\n rechts:\n")
+printfitdata(rechts1b,"Orientierung 1, Peak 1")
+printfitdata(rechts1a,"Orientierung 1, Peak 2")
+printfitdata(rechts2,"Orientierung 2")
+
 
 par(mfrow=c(1,2))
 
@@ -122,7 +137,7 @@ plot(ef1data$x,ef1data$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=po
 with(data=ef1data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n"))
 bereich=c(135,188)
 fit=gausfit(ef1data,bereich,weighted)
-plotgaus(fit,bereich)
+#plotgaus(fit,bereich)
 title("linker Szintillator")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*2000)
@@ -132,7 +147,7 @@ plot(ef2data$x,ef2data$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=po
 with(data=ef2data,expr=Hmisc::errbar(x,y,y+sy,y-sy,add=T,pch=4,type="n"))
 bereich=c(4,35)
 fit=gausfit(ef2data,bereich,weighted)
-plotgaus(fit,bereich)
+#plotgaus(fit,bereich)
 title("rechter Szintillator")
 axis(1,at=c(0:10)*25)
 axis(2,at=c(0:11)*200)
