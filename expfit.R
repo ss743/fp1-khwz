@@ -6,7 +6,7 @@ expfit <- function(input, bereich, weighted=FALSE){
   
   ymin=min(daten$y)
   xmin=daten$x[which.min(daten$y)]
-  if(ymin<0) ymin=0
+  #if(ymin<0) ymin=0
   ymax=max(daten$y)
   xmax=daten$x[which.max(daten$y)]
   lambda_est=log(ymin/ymax)/(xmin-xmax)
