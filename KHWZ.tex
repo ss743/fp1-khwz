@@ -60,11 +60,11 @@
 
 %neue Commands----------------------------------------------------------------------------------------------------------
 \newcommand{\nab}{\vec{\nabla}} %direkter Befehl mit Vektorpfeil
-\newcommand{\gra}[2]{
+\newcommand{\gra}[3][0.7]{
 	\begin{minipage}{\textwidth}
 		\centering
-		\includegraphics[width=0.7\textwidth]{figures/#1.png}
-		\captionof{figure}{#2}
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\captionof{figure}{#3}
 	\end{minipage}
 	}
 
@@ -192,7 +192,7 @@ Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für 
 \subsection{Aufnahme der Energiespektren}
 Zunächst werden die Energiespektren von Kobalt und Americium aufgenommen. Dabei muss das Spektrum jeweils von beiden Detektoren aufgenommen werden und zusätzlich beim Kobalt auch in beiden Orientierungen. So soll bestimmt werden, mit welchem Detektor nachher welcher Peak ($14,4$ keV bzw.$122$ keV) gemessen wird. Hierfür verwenden wir folgende Schaltung:
 \vskip 50 pt
-\gra{Schaltung 1}{Versuchsaufbau 1: Aufnahme der Energiespektren}
+\gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren}
 \vskip 30 pt
 Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die 
 
