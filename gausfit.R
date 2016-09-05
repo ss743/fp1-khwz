@@ -6,7 +6,8 @@ gausfit <- function(input,bereich,weighted=FALSE){
   ymin=min(daten$y)
   ymax=max(daten$y)
   mu0 =daten$x[which.max(daten$y)]
-  sig0=(daten$x(bereich[2])-daten$x(bereich[1]))/3
+  sig0=(daten$x[bereich[2]]-daten$x[bereich[1]])/3
+  sig0=(bereich[2]-bereich[1])/3
   err=daten$sy
   
   cat("\nStartvalues:\n C   = ")
