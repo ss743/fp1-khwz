@@ -165,9 +165,14 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar i.e. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
  \subsection{Messprinzip}
  \subsubsection{Messung der Zerfallsdauern}
- Um die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe zu bestimmen, messen wir die einzelnen Lebensdauern der angeregten $^{57}$Fe-Atome. Der Zustand entsteht unter Emission eines $122,1$ keV-$\gamma$-Quants und zerfällt unter Emission eines $14,4$ keV-$\gamma$-Quants, so dass wir die Zeitmessung mit Detektion des $122,1$ keV-Photons starten und mit Detektion des $14,4$ keV-Photons beenden könnten. Bei diesem Verfahren allerdings tritt das Problem auf, dass nur ca. 10\% der $^{57}$Fe-Atome über $\gamma$-Zerfall und ca. 90\% über innere Konversion zerfallen. Wenn nun ein $122,1$ keV-Photon detektiert wird und kein dazugehöriges $14,4$ keV-Photon erzeugt wird, dann wird die Messung nicht beendet, wodurch die Totzeit vergrößert und die Messung verfälscht wird.
+ 
+ \paragraph{Verzögerte Koinzidenzen}Um die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe zu bestimmen, messen wir die einzelnen Lebensdauern der angeregten $^{57}$Fe-Atome. Der Zustand entsteht unter Emission eines $122,1$ keV-$\gamma$-Quants und zerfällt unter Emission eines $14,4$ keV-$\gamma$-Quants, so dass wir die Zeitmessung mit Detektion des $122,1$ keV-Photons starten und mit Detektion des $14,4$ keV-Photons beenden könnten. Bei diesem Verfahren allerdings tritt das Problem auf, dass nur ca. 10\% der $^{57}$Fe-Atome über $\gamma$-Zerfall und ca. 90\% über innere Konversion zerfallen. Wenn nun ein $122,1$ keV-Photon detektiert wird und kein dazugehöriges $14,4$ keV-Photon erzeugt wird, dann wird die Messung nicht beendet, wodurch die Totzeit vergrößert und die Messung verfälscht wird.
  Um dieses Problem zu umgehen, benutzt man die Methode der verzögerten Koinzidenzen. Bei dieser Methode wird das Signal der $122,1$ keV-Photonen verzögert, so dass das Signal nach dem Signal der $14,4$ keV-Photonen ankommt. Dann wird das Signal der $14,4$ keV-Photonen als Start- und das der $122,1$ keV-Photonen als Stop-Signal verwendet. Die gemessene Differenz wird nun von der Verzögerung abgezogen, um die tatsächliche Lebensdauer zu erhalten.
  Der radioaktive Zerfall ist ein statistischer Prozess (siehe \ref{zerfallsgesetz}), mit der Anzahl $N(t)$ der nach einer Zeit $t$ noch vorhandenen Kerne: $N(t)=N_0\exp({-\frac t \tau})$ Die gemessenen Zeiten $\Delta t$ folgen ebenso dieser Exponentialverteilung um die mittlere Lebensdauer $\tau$.
+ Durch das Vertauschen von Start- und Stoppsignal wird diese Exponentialverteilung an der y-Achse gespiegelt, sodass erst durch Zeitverzögerung die Exponentialverteilung im positiven x-Achsen-Bereich  (und damit messbar) ist. Beim Messen der verzögerten Koinzidenzen erwarten wir demnach einen exponentiellen Anstieg.
+ 
+ \paragraph{Zufällige Koinzedenzen} Da das Start- und Stoppsignal am TAC nicht zwingend vom selben Kern, d.h. vom selben Zerfallsprozess, stammt müssen diese zufälligen Koinzidenzen, die einen Untergrund bei der Messung der verzögerten Koinzidenzen darstellen, ebenfalls gemessen werden. Diese Messung kann gleichzeitig mit der Messung der verzögerten Koinzidenzen durchgeführt werden, in dem der Delay (die Zeitverzögerung) so gewählt wird, dass der exponentielle Anstieg nur die erste Hälfte des Fensters einnimmt, sodass die zufälligen Koinzidenzen im letzten Viertel des Plots beobachtbar sind. 
+ 
  \subsubsection{Nachweis der $\gamma$-Strahlung mithilfe des Szintillationszählers}
  Die emittierten Photonen müssen nun detektiert und ihre Energie bestimmt werden. Dazu wird ein Energie-sensitiver Detektor, eine Kombination aus Szintillator und Photomultiplier, verwendet.
  \paragraph{Szintillator} Ein Szintillator detektiert Teilchen eines bestimmten Energiebereichs. Es gibt organische und anorganische Szintillatoren, wobei in diesem Versuch anorganische NaI(Tl)-Szintillatoren verwendet werden. Dieser besteht aus einem mit Thallium dotierten NaI-Kristall, in welchem die eintreffenden Photonen ihre Energie durch den Photo- oder Compton-Effekt an Elektronen abgeben. Je höher die Energie der Photonen ist, desto mehr Elektronen werden erzeugt. Diese Elektronen werden nun angeregt und später unter Emission  niederenergetischer Photonen wieder abgeregt. Die Dotierung mit Thallium verhindert, dass die emittierten Elektronen wieder absorbiert werden.
@@ -217,12 +222,20 @@ Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$
 Zur Messung der verzögerten und zufälligen Koinzedenzen werden die Einstellungen aus den vorherigen Teilen des Experiments übernommen. Wir verwenden hier folgende Schaltung:
 
 \vskip 50 pt
-\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufääligen Koinzidenzen}
+\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen}
 \vskip 30 pt
 
 Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der exponentielle Anstieg zu sehen ist, im dritten Viertel der ausgeschmierte Abfall zu sehen ist und im letzten Viertel die zufälligen Koinzidenzen, d.h. der Untergrund zu sehen ist.
  
 \subsection{Zeitkalibrierung des TAC} \label{zeiteichung}
+
+\vskip 50 pt
+\gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung}} 
+\vskip 30 pt
+
+Zur Messung der Zeitkalibrierung des TAC wird das Signal eines SCA aufgeteilt und ein Zweig unverzögert als Startsignal an den TAC weitergeleitet während der zweite Zweig über die Delay-Box verzögert wird und als Stoppsignal an den TAC angelegt wird. Wir erhalten so durch Einstellen verschiedener Delay-Zeiten Chanel-Zeit-Paare, mit denen die Zeitkalibrierung durchgeführt wird.
+Zu beachten ist hierbei, dass die gleiche Chanel-Anzahl wie beim vorherigen Versuchsteil gewählt wird.
+Der Versuchsaufbau zu dieser Messung ist in Abbildung \ref{zeitkalibrierung} dargestellt.
 
 
 \newpage
