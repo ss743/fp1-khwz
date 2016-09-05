@@ -5,6 +5,8 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   count_fehl=0
   total=0
   lambda=c()
+  A=c()
+  C=
   error=c()
   breite=c()
   breite_fehl=c()
@@ -25,6 +27,8 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
           count=count+1
           lambda[count]=l
           error[count]=fit["lambda","Std. Error"]
+          A[count]=fit["A","Estimate"]
+          C[count]=fit["C","Estimate"]
         }
       }, warning = function(w) {
         cat("Nich so gut:")
@@ -54,13 +58,13 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   cat("\nGemachte Fits: ")
   cat(count)
   
-  h1=hist(breite)
+  #h1=hist(breite)
   #print(breite_fehl)
-  h2=hist(breite_fehl,add=TRUE)
+  #h2=hist(breite_fehl,add=TRUE)
   
-  plot(h1$mid,h2$density/h1$density,type="h")
-  plot(daten$x[1]:daten$x[bereich[2]],bin_counts_fehl/bin_counts)
+  #plot(h1$mid,h2$density/h1$density,type="h")
+  #plot(daten$x[1]:daten$x[bereich[2]],bin_counts_fehl/bin_counts)
   
   
-  return(data.frame(lambda,error))
+  return(data.frame(lambda,error,A,C))
 }

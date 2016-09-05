@@ -37,15 +37,11 @@ plotexp <- function(fitdata,bereich){
   
 }
 
-printexpdata <- function(fitdata,title=""){
+printexpdata <- function(fitdata,title="",factor=1,error=0){
   
-  lambda<-fitdata["lambda","Estimate"]
-  slambda<-fitdata["lambda","Std. Error"]
-  C<-fitdata["C","Estimate"]
-  sC<-fitdata["C","Std. Error"]
-  A<-fitdata["A","Estimate"]
-  sA<-fitdata["A","Std. Error"]
-  
+  lambda<-fitdata["lambda","Estimate"]/factor
+  slambda<-lambda*sqrt((fitdata["lambda","Std. Error"]/fitdata["lambda","Estimate"])^2+(error/factor)^2)
+
   cat(title)
   cat("\n")
   
