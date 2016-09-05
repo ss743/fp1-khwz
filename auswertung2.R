@@ -1,5 +1,14 @@
+library(Hmisc)
+
 source("multiexpfit.R")
 source("gausfit.R")
+
+messung=read.table("data/Hauptmessung.TKA")
+
+bereich=c(50,1024)
+
+messung1=messung[[1]][bereich[1]:bereich[2]]
+data1=data.frame(x=bereich[1]:bereich[2],y=messung1,sy=sqrt(messung1))
 
 par(mfrow=c(1,1))
 
@@ -9,23 +18,15 @@ pointsize<- 0.6
 weighted <- TRUE
 
 
-s=200
-x=c(1:200)
-y=2*exp(0.05*x)+rnorm(x,sd=s)
-for(i in x){
-  if(y[i]<0){
-    y[i]=0
-  }
-}
-err=(s*x)/x
 
-daten=data.frame(x,y,err)
+daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
 #axis(1,at=c(0:20)*20)
 #axis(2,at=c(0:11)*100000000)
 grid()
 
 bereich=c(100,200)
+bereich=bereich-50
 fit=multiexpfit(daten,bereich,50,weighted)
 result=hist(fit$lambda,breaks=50,plot=FALSE)
 daten=data.frame(x=result$mids,y=result$density,sy=sqrt(result$density))

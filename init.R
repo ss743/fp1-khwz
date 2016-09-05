@@ -1,0 +1,1 @@
+setwd("/home/simon/Dokumente/Uni/FS 6/FP 1/fp1-khwz")

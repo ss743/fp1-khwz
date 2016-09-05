@@ -9,7 +9,7 @@ expfit <- function(input, bereich, weighted=FALSE){
   #if(ymin<0) ymin=0
   ymax=max(daten$y)
   xmax=daten$x[which.max(daten$y)]
-  lambda_est=log(ymin/ymax)/(xmin-xmax)
+  lambda_est=log(2)/200#log(ymin/ymax)/(xmin-xmax)
   C_est=ymin*exp(-lambda_est*xmin)
   A_est=0
   
@@ -17,10 +17,11 @@ expfit <- function(input, bereich, weighted=FALSE){
   
   startvalues=list(C=C_est,A=A_est,lambda=lambda_est)
   
+  nlc<-nls.control(maxiter=5000)
   if(weighted)
-    fit = nls(theexponential,daten,weights=1/err^2,start=startvalues)
+    fit = nls(theexponential,daten,weights=1/err^2,start=startvalues,control=nlc)
   else
-    fit = nls(theexponential,daten,start=startvalues)
+    fit = nls(theexponential,daten,start=startvalues,control=nlc)
   
   return(summary(fit)$parameters)
   
