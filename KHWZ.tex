@@ -241,7 +241,101 @@ Der Versuchsaufbau zu dieser Messung ist in Abbildung \ref{zeitkalibrierung} dar
 \newpage
 \section{Auswertung}
 
+Wir haben für die Auswertung des Versuchs die Programmiersprache R verwendet.
 
+\subsection{Energiespektren}
+
+\paragraph{Energiekalibration} Wir haben zunächst die Peaks des $^{241}$Am - Spektrums für beide Detektoren mit Hilfe von Gauß-fits bestimmt.
+
+\vskip 50 pt
+\gra[0.8]{Americium}{$^{241}$Am - Spektren mit Gauß-Fit}
+\vskip 30 pt
+
+Für die Einzelnen Fits erhalten wir dabei folgende Daten:
+\vskip 10 pt
+
+linker Szintillator:\\
+Peak 1
+\begin{align*}
+ \mu    = 31.8\pm0.4\\
+ \sigma = 8.3\pm0.31
+\end{align*}
+
+Peak 2
+\begin{align*}
+ \mu    = 40.75\pm0.18\\
+ \sigma = 8.22\pm0.18
+\end{align*}
+
+Peak 3
+\begin{align*}
+ \mu    = 93.518\pm0.017\\
+ \sigma = 8.523\pm0.016
+\end{align*}
+
+
+rechter Szintillator:\\
+Peak 1
+\begin{align*}
+\mu    = 29.61\pm0.19\\
+\sigma = 7.6\pm0.2
+\end{align*}
+Peak 2
+\begin{align*}
+ \mu    = 44.1\pm0.2\\
+ \sigma = 7.19\pm0.18
+\end{align*}
+
+Peak 3
+\begin{align*}
+ \mu    = 99.23\pm0.03\\
+ \sigma = 7.10\pm0.02
+\end{align*}
+
+
+Diese Peaks werden nun an Hand des Zerfallsschemas von $^{241}$Am den entprechenden Energien zugeordnet.
+
+\vskip 50 pt
+\gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am }
+\vskip 30 pt
+
+Die Peaks sind damit den Energien $26.3$ keV, $33.2$ keV und $59.5$ keV zuzuordnen. Wir können nun für beide Szintillatoren die Energiekalibrierung durchführen. Dazu führen wir für die erhaltenen Energie-Chanel-Paare einen Linearen Fit durch:
+
+\vskip 50 pt
+\gra[0.8]{linker_szinti}{Energiekalibrierung Linker Szintillator}
+\vskip 20 pt
+
+\gra[0.8]{rechter_Szinti}{Energiekalibrierung Rechter Szintillator}
+\vskip 20 pt
+
+Hierbei ist anzumerken, das ein linearer Fit mit drei Punkten statistisch wenig sinnvoll ist. Die gefundenen Peaks im Kobalt-Spektrum werden wir daher mit der Chanelzahl für die jeweiligen Peaks und dem Energie-Literaturwert in den Fit eintragen und überprüfen, ob sie im Rahmen des Fehlers  
+Für die aufgenommenen Kobaltspektren haben wir die Peaks ebenfalls Gauß gefittet:
+
+\vskip 50 pt
+\gra[0.9]{Cobalt}{Energiespektren von Kobalt}
+\vskip 30 pt
+
+In Abbildung 11 sieht man, dass der $14.4$ keV Peak nur in einem Graphen gut zu erkennen ist, nämlich beim rechten Szintillator in Orientierung 1. Wir haben daher auch nur für diesen Graph einen Gauß-Fit für den $14.4$ keV Peak durchgeführt. 
+
+\vskip 30 pt
+\begin{tabular}{l|c|c}
+
+&links:&rechts\\\hline
+Orientierung 1&
+ $\mu    = 188.34\pm0.13$&Peak 1: $\mu    = 21.7\pm0.4$\\
+ &$\sigma = 15.40\pm0.12$&$\sigma = 6.3\pm1.3$\\
+ &&Peak 2: $\mu    = 201.75\pm0.16$\\
+  &&$\sigma = 12.05\pm0.15$\\\hline
+Orientierung 2&
+ $\mu    = 190.8\pm0.2$& $\mu    = 196.9\pm0.2$\\
+ &$\sigma = 15.55\pm0.19$&$\sigma = 12.98\pm0.19$
+ \end{tabular}
+
+\vskip 30 pt
+
+Wir tragen nun die Kobaltpaks mit Literatur-Energiewert($122$ keV bzw. $14.4$ keV) und ihren Standardabweichungen in die Linearen Fits ein, um wie bereits erwähnt, ein Gefühl für die Güte dieser Fits zu bekommen.
+
+\subsection{Hauptmessung}
 \newpage
 \section{Zusammenfassung/Diskussion}
 
