@@ -6,7 +6,8 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   total=0
   lambda=c()
   A=c()
-  C=
+  C=c()
+  A_err=c()
   error=c()
   breite=c()
   breite_fehl=c()
@@ -14,6 +15,10 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   bin_counts_fehl=rep(0,bereich[2])
   for (i in bereich[1]:(bereich[2]-width)){
     for (j in (i+width):bereich[2]){
+      #cat("\ni: ")
+      #cat(i)
+      #cat(", j: ")
+      #cat(j)
       total=total+1
       breite[total]=j-i
       succeeded=FALSE
@@ -28,6 +33,7 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
           lambda[count]=l
           error[count]=fit["lambda","Std. Error"]
           A[count]=fit["A","Estimate"]
+          A_err[count]=fit["A","Std. Error"]
           C[count]=fit["C","Estimate"]
         }
       }, warning = function(w) {
@@ -66,5 +72,5 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   #plot(daten$x[1]:daten$x[bereich[2]],bin_counts_fehl/bin_counts)
   
   
-  return(data.frame(lambda,error,A,C))
+  return(data.frame(lambda,error,A,C,A_err))
 }

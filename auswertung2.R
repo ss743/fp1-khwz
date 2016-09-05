@@ -2,11 +2,13 @@ library(Hmisc)
 
 source("multiexpfit.R")
 source("gausfit.R")
+source("konstfit.R")
 
 messung=read.table("data/Hauptmessung.TKA")
 
-rebinfactor=2
+rebinfactor=4
 rebinned=c()
+startabschnitt=25
 
 for(i in c(1:(1024/rebinfactor))){
   rebinned[i]=0
@@ -18,7 +20,7 @@ for(i in c(1:(1024/rebinfactor))){
 
 
 
-bereich=c(50,1024/rebinfactor)
+bereich=c(startabschnitt,1024/rebinfactor)
 bereich2=c(50,1024)
 
 messung1=rebinned[bereich[1]:bereich[2]]
@@ -40,17 +42,19 @@ plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=points
 #axis(1,at=c(0:20)*20)
 #axis(2,at=c(0:11)*100000000)
 grid()
+title("Original (1024 Kanäle)")
 
 daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
 #axis(1,at=c(0:20)*20)
 #axis(2,at=c(0:11)*100000000)
 grid()
+title("Rebin (256 Kanäle)")
 
 par(mfrow=c(1,1))
 
-bereich_bins=c(75,275)
-bereich=bereich_bins-50
+bereich_bins=c(120,520)/rebinfactor
+bereich=bereich_bins-startabschnitt
 fit=multiexpfit(daten,bereich,50,weighted)
 result=hist(fit$lambda,breaks=50,plot=FALSE)
 daten=data.frame(x=result$mids,y=result$density,sy=sqrt(result$density))
@@ -61,36 +65,40 @@ bereich=c(which.min(daten$x),which.max(daten$x))
 plot(result$mids,result$density,type="h",lwd=10,col="gray30",xlab="Zerfallskonstante",ylab="Counts",bty="l")
 fit=gausfit(daten,bereich,FALSE)
 plotgaus(fit,c(daten$x[bereich[1]],daten$x[bereich[2]]))
-printfitdata(fit)
+#printfitdata(fit)
 
-result=hist(multiexpfit$A,breaks=50,plot=FALSE)
-daten=data.frame(x=result$mids,y=result$density,sy=sqrt(result$density))
-#cat("\n")
-#print(daten)
-bereich=c(which.min(daten$x),which.max(daten$x))
-plot(result$mids,result$density,type="h",lwd=10,col="gray30",xlab="Zerfallskonstante",ylab="Counts",bty="l")
-fitA=gausfit(daten,bereich,FALSE)
-#plotgaus(fit,c(daten$x[bereich[1]],daten$x[bereich[2]]))
-printfitdata(fitA)
+#Suche alle Datensätze zum mittleren lambda
+mu=fit["mu","Estimate"]
+sigma=fit["sig","Estimate"]
+count=0
+As=c()
+As_err=c()
+Cs=c()
+for(i in c(1:length(multiexpfit$lambda)))
+{
+  if(mu-sigma/5 < multiexpfit$lambda[i] && multiexpfit$lambda[i] < mu+sigma/5)
+  {
+    count=count+1
+    As[count]=multiexpfit$A[i]
+    Cs[count]=multiexpfit$C[i]
+    As_err[count]=multiexpfit$A_err[i]
+  }
+}
 
-result=hist(multiexpfit$C,breaks=50,plot=FALSE)
-daten=data.frame(x=result$mids,y=result$density,sy=sqrt(result$density))
-#cat("\n")
-#print(daten)
-bereich=c(which.min(daten$x),which.max(daten$x))
-#plot(result$mids,result$density,type="h",lwd=10,col="gray30",xlab="Zerfallskonstante",ylab="Counts",bty="l")
-fitC=gausfit(daten,bereich,FALSE)
-#plotgaus(fit,c(daten$x[bereich[1]],daten$x[bereich[2]]))
-printfitdata(fitC)
+#print(count)
+A=sum(As)/count
+C=sum(Cs)/count
+A_err=sqrt(sum(As_err^2))/count
 
 
 fitData=data.frame(matrix(vector(),1,2,dimnames=list(c("lambda"),c("Estimate","Std. Error"))),stringsAsFactors=FALSE)
 fitData["lambda","Estimate"]=fit["mu","Estimate"]
-fitData["lambda","Std. Error"]=fit["mu","Std. Error"]
-fitData["A","Estimate"]=fitA["mu","Estimate"]
-fitData["C","Estimate"]=fitC["mu","Estimate"]
-
-printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=0.58,error=0.05)
+fitData["lambda","Std. Error"]=fit["sig","Estimate"]
+fitData["A","Estimate"]=A
+fitData["A","Std. Error"]=A_err
+fitData["C","Estimate"]=C
+cat("\n")
+printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=rebinfactor*0.517,error=0.018)
 
 daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
@@ -98,5 +106,21 @@ plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=points
 #axis(2,at=c(0:11)*100000000)
 grid()
 
+#konstfitbereich=c(420,512)
+konstfitbereich=c(840,1024)/rebinfactor
 plotexp(fitData,bereich_bins)
-grid()
+konst=konstfit(daten,konstfitbereich-startabschnitt)
+lines(konstfitbereich,konst,type="l",col="red")
+cat("Untergrund\n Gefittet: ")
+cat(A)
+cat("+-")
+cat(A_err)
+cat("\n Gemessen: ")
+cat(konst[1]/rebinfactor)
+cat("+-")
+cat(konsterror(daten,konstfitbereich-startabschnitt,konst[1])/rebinfactor)
+#data=daten[420:500,]
+#a=sum(data$y)/(80)
+
+#return(c(a,a))
+

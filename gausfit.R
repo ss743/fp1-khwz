@@ -1,4 +1,4 @@
-gausfit <- function(input,bereich,weighted=FALSE){
+gausfit <- function(input,bereich,weighted=FALSE,sig0=0){
   
   thegaussian <- y ~ C + N*exp(-(x-mu)^2/(2*sig^2))
   
@@ -6,19 +6,22 @@ gausfit <- function(input,bereich,weighted=FALSE){
   ymin=min(daten$y)
   ymax=max(daten$y)
   mu0 =daten$x[which.max(daten$y)]
-  sig0=(daten$x[bereich[2]]-daten$x[bereich[1]])/3
-  sig0=(bereich[2]-bereich[1])/3
+  if(sig0==0)
+  {
+    sig0=(daten$x[bereich[2]]-daten$x[bereich[1]])/3
+    #sig0=(bereich[2]-bereich[1])/3
+  }
   err=daten$sy
   
-  cat("\nStartvalues:\n C   = ")
-  cat(ymin)
-  cat("\n N   = ")
-  cat(ymax)
-  cat("\n mu  = ")
-  cat(mu0)
-  cat("\n sig = ")
-  cat(sig0)
-  cat("\n")
+  #cat("\nStartvalues:\n C   = ")
+  #cat(ymin)
+  #cat("\n N   = ")
+  #cat(ymax)
+  #cat("\n mu  = ")
+  #cat(mu0)
+  #cat("\n sig = ")
+  #cat(sig0)
+  #cat("\n")
   
   if(weighted)
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=ymax,mu=mu0,sig=sig0))
