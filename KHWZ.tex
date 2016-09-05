@@ -66,6 +66,7 @@
 		\includegraphics[width=#1\textwidth]{figures/#2.png}
 		\captionof{figure}{#3}
 	\end{minipage}
+	\vskip 30 pt
 	}
 
 
@@ -336,6 +337,24 @@ Orientierung 2&
 Wir tragen nun die Kobaltpaks mit Literatur-Energiewert($122$ keV bzw. $14.4$ keV) und ihren Standardabweichungen in die Linearen Fits ein, um wie bereits erwähnt, ein Gefühl für die Güte dieser Fits zu bekommen.
 
 \subsection{Hauptmessung}
+\subsubsection{Multi-Exponentialfit}
+\gra[1]{original}{Messdaten der Hauptmessung\label{original}}
+In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Über die Zeitkalibrierung können die Channels später in Zeiten umgerechnet werden.
+
+Die erste Hälfte der Daten zeigt die erwartete Exponentialkurve auf. Um aus dieser nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit. Dieser besteht aus vielen Exponentialfits mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
+
+Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass sehr viele der Fits fehlschlagen. Dies ist vermutlich auf die sehr große Streuung der Datenpunkte zurückzuführen. Eine geringere Streuung der Datenpunkte lässt sich durch einen Rebin erhalten.
+\subsubsection{Rebin}
+Der Rebin ist eine Neuzuteilung der Channels. Es werden immer 2 nebeneinanderliegende Channels auf einen Channel gelegt. Dadurch wird die Gesamtzahl der Channels halbiert. Bei der Zeitumrechnung muss der Rebinfactor dann natürlich auch berücksichtigt werden.
+Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%
+\gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
+\subsubsection{Gauß-Fit}
+\gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}$. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.\\
+\gra[1]{endergebnis}{Messdaten mit per Multi-Exponentialfit gefitteter Zerfallsfunktion\label{endergebnis}}
+
+\subsubsection{Untergrundmessung}
+Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
 \newpage
 \section{Zusammenfassung/Diskussion}
 

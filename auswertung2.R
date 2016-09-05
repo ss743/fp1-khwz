@@ -52,6 +52,12 @@ grid()
 title("Rebin (256 Kanäle)")
 
 par(mfrow=c(1,1))
+data2
+plot(data2$x,data2$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
+#axis(1,at=c(0:20)*20)
+#axis(2,at=c(0:11)*100000000)
+grid()
+
 
 bereich_bins=c(120,520)/rebinfactor
 bereich=bereich_bins-startabschnitt
@@ -98,7 +104,7 @@ fitData["A","Estimate"]=A
 fitData["A","Std. Error"]=A_err
 fitData["C","Estimate"]=C
 cat("\n")
-printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=rebinfactor*0.517,error=0.018)
+printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=rebinfactor*0.58,error=0.05)
 
 daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
