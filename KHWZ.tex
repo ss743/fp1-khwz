@@ -423,7 +423,7 @@ Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% 
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}_\text{Rebin}=60\pm20\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}_\text{Rebin}=240\pm80\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
 
 
 \subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt. Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
@@ -455,13 +455,47 @@ Wir beobachten, dass es sich bei dem Messpunkt ($39$ Channel/$2.5$ ns) offenbar 
 
 \gra{Fit_TAC}{Zeitkalibrierung des TAC}
 
-Wir erhalten für die Zeitkalibration des TAC: $b=0.512\pm0.018$ ns/channel
+Wir erhalten für die Zeitkalibration des TAC: $b=0.512\pm0.018$ ns/channel, d.h. 1 Channel entspricht $0.512\pm0.018$ 
 
 \subsection{Berechnung der Halbwertszeit des $14.4$keV Zustandes}
 
 \subsubsection{Exponentieller Fit}
 
-Wir erhielten für den exponentiellen Fit eine Zerfallskonstante von  $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$ und eine Halbwertszeit von $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}$. Dies kann mit dem Faktor $b=0.512\pm0.018$ ns/channel nun in ns umgerechnet werden:
+Wir erhielten für den exponentiellen Fit eine Zerfallskonstante von  $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$ und eine Halbwertszeit von $T_{\frac12}=\frac{\ln2}{\lambda}=240\pm80\,\text{Channel}$. Dies kann mit dem Faktor $b=0.512\pm0.018$ ns/channel nun in ns umgerechnet werden:
+
+\begin{align*}
+T_{\frac12} = 240\text{ Channel} = 122.88 \text{ ns}
+\end{align*}
+
+mit der Unsicherheit:
+
+\begin{align*}
+S_{T_{\frac12}} = \sqrt{\left(\frac{s_{T_{{\frac12}_{ch}}}}{T_{{\frac12}_{ch}}}\right)^2+\left(\frac{s_b}{b}\right)^2} \cdot T_{\frac12} = 41.2 \text{ ns}
+\end{align*}
+
+Somit erhalten wir:
+\begin{align*}
+T_{\frac12} = 123 \pm 41 \text{ ns}
+\end{align*}
+
+\subsubsection{Linearer Fit}
+
+Wir erhielten für den linearen Fit eine Zerfallskonstante von  $\lambda=(0,00341\pm0,00017)\, \frac1{\text{Channel}}$ und eine Halbwertszeit von $T_{\frac12}=\frac{\ln2}{\lambda}=203\pm10\,\text{Channel}$. Dies kann mit dem Faktor $b=0.512\pm0.018$ ns/channel nun in ns umgerechnet werden:
+
+\begin{align*}
+T_{\frac12} = 203\text{ Channel} = 103.94 \text{ ns}
+\end{align*}
+
+mit der Unsicherheit:
+
+\begin{align*}
+S_{T_{\frac12}} = \sqrt{\left(\frac{s_{T_{{\frac12}_{ch}}}}{T_{{\frac12}_{ch}}}\right)^2+\left(\frac{s_b}{b}\right)^2} \cdot T_{\frac12} = 6.29 \text{ ns}
+\end{align*}
+
+Somit erhalten wir:
+\begin{align*}
+T_{\frac12} = 104 \pm 6 \text{ ns}
+\end{align*}
 
 \section{Zusammenfassung/Diskussion}
 
