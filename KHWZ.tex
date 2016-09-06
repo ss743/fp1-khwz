@@ -423,7 +423,7 @@ Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% 
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}_\text{Rebin}=60\pm20\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
 
 
 \subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt. Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
@@ -431,7 +431,7 @@ In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten de
 A&=24\pm8 \text{ Counts}\\
 B&=232\pm6 \text{ Counts}
 \end{align*}
-Damit erhalten wir für die Fit-Funktion:
+Damit erhalten wir für die Fit-Funktion im Rebin:
 \begin{align*}
 f(x)&=24+232\cdot\exp(0,012\cdot x)
 \end{align*}
