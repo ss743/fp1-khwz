@@ -105,7 +105,7 @@ Zunächst werden die Energie-Spektren von $^{57}$Co und $^{241}$Am aufgenommen. 
 
 
 \newpage
-\section{Theoretische Grundlagen}
+\section[Theoretische Grundlagen]{Theoretische Grundlagen $^{\cite{anleitung}}$ $^{\cite{nuclear}}$}
 \subsection{Zerfallsgesetz}\label{zerfallsgesetz}
 Der radioaktive Zerfall ist ein statistischer Prozess d.h. der genaue Zeitpunkt zu dem ein Kern zerfällt kann nicht vorhergesagt werden, stattdessen wird mit Wahrscheinlichkeiten gearbeitet. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
 \[\frac{dN}{dt}=-\lambda N\]
@@ -189,9 +189,8 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
 
  
 \newpage
-\section{Versuchsaufbau- und durchführung}
+\section[Versuchsaufbau- und Durchführung]{Versuchsaufbau- und Durchführung $^{\cite{anleitung}}$}
 \subsection{Geräte}
-
 \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
 \paragraph{Main Amplifier (MA)}
 Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen möglichst kurzen Puls, dessen Dauer Amplituden-unabhängig ist. Die Pulshöhe ist dabei annähernd proportional zur deponierten Ladungsmenge im Szintillator. Der Hauptverstärker hat zwei verschiedene Ausgänge, die entweder ein bipolares Signal (zeitsensible Messungen) oder ein unipolares Signal (Aufnahme der Spektren) liefern.
@@ -232,7 +231,7 @@ Zur Messung der verzögerten und zufälligen Koinzedenzen werden die Einstellung
 \gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen $^{\cite{anleitung}}$}
 
 
-Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der exponentielle Anstieg zu sehen ist, im dritten Viertel der ausgeschmierte Abfall zu sehen ist und im letzten Viertel die zufälligen Koinzidenzen, d.h. der Untergrund zu sehen ist.
+Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der exponentielle Anstieg zu sehen ist, im dritten Viertel der ausgeschmierte Abfall zu sehen ist und im letzten Viertel die zufälligen Koinzidenzen, d.h. der Untergrund zu sehen ist. Da wir die Hauptmessung über das Wochenende laufen lassen konnten, wählten wir eine Einstellung von 1024 Channels, da wir ausreichend Counts erwarteten, um mit mehr Channels eine höhere Genauigkeit zu erreichen.
  
 \subsection{Zeitkalibrierung des TAC} \label{zeiteichung}
 
@@ -505,6 +504,7 @@ Somit erhalten wir:
 T_{\frac12} = 104 \pm 6 \text{ ns}
 \end{align*}
 
+\newpage
 \section{Zusammenfassung/Diskussion}
 
 \subsection{Zusammenfassung der Ergebnisse}
@@ -523,13 +523,19 @@ Multi-Linearfit:
 T_{\frac12} = 104 \pm 6 \text{ ns}
 \end{align*}
 
-Literaturwert: 
+Literaturwert: $^{\cite{anleitung}}$
 
 \begin{align*}
 T_{\frac12} = 98 \text{ ns}
 \end{align*}
 
 
+\subsection{Diskussion}
+
+Bei den Zeitmessungen (Hauptmessung und TAC-Kalibrierung) stellten wir für kleine Zeiten vermehrt Ausreißer fest. Interessant ist, dass dies für beide Zeitmessungen auftrat, was den Verdacht eines unerkannten systematischen Fehlers für kleine Zeiten nahe legt. Ursache hierfür könnten Fehler durch die Kabel oder Geräte sein, obwohl wir für durch die Kabel verursachten Fehler ein konstanten Offset erwarten würden. Beispielsweise wäre es denkbar, dass sich mit dem TAC auf Grund seiner Bauweise sehr kleine Zeiten weniger genau messen lassen.
+\\\ \\
+Beide gemessenen Halbwertszeiten stimmen im Rahmen einer Standardabweichung mit dem Literaturwert überein. Dies ist erfreulich.
+Dabei fällt allerdings auf, dass der Multi-Linearfit einen deutlich besseren und genaueren Wert liefert, als der Multi-Exponentialfit. Dies liegt vermutlich in der Güte der Exponentialfits begründet. Durch die hohe Streuung schlugen sehr viele Exponentialfits fehl, weshalb wir ein Rebinning vornehmen mussten, welches die Anzahl der Exponentialfits und damit die Genauigkeit des Ergebnisses deutlich reduziert hat. Beim Multi-Linearfit war das Rebinning nicht nötig, da hier bereits ohne Rebin kein Fit fehlschlug. Deshalb konnten wir deutlich mehr Linearfits als Exponentialfits durchführen, welches eine höhere Genauigkeit bewirkt.
 
 \newpage
 \section{Anhang}
@@ -553,7 +559,7 @@ T_{\frac12} = 98 \text{ ns}
 \lstinputlisting[language=R]{TCA_kallibrierung.R}
 \subsubsection*{Energiekalibrierung.R}\label{energie}
 \lstinputlisting[language=R]{Energiekalibrierung.R}
-\subsection{Rohdaten}
+
 
 %\subsubsection{$\alpha$-Plateau Samarium}
 %\lstinputlisting{data/Americium_1.TKA}
@@ -563,8 +569,7 @@ T_{\frac12} = 98 \text{ ns}
 %\subsection{Quellcode (MATLAB)}
 %\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
 
-\newpage
-\subsection{Laborheft}
+
 %\begin{minipage}{\textwidth}
 %\centering
 %\includegraphics[width=0.9\textwidth]{figures/IMG_20151002_141014.jpg}
@@ -583,9 +588,17 @@ T_{\frac12} = 98 \text{ ns}
 \bibitem{anleitung}
  (Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
   
+\bibitem{physchem}
+	Gerd Weldler, Hans-Joachim Freund,
+	\emph{Lehrbuch der Physkalischen Chemie, Band 1},
+	6th edition,
+	John Wiley \& Sons,
+	2012
 
-
-
+\bibitem{nuclear}
+Bernard L. Cohen,
+\emph{Concepts of Nuclear Physics},
+ New York usw.: McGraw-Hill 1971
   
 %\bibitem{molmasse}
 %  \emph{http://www.convertunits.com/molarmass/<ELEMENTNAME AUF ENGLISCH>}, Stand 28.09.2015
