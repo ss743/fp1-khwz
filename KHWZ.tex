@@ -390,12 +390,11 @@ Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass
 
 \subsubsection{Rebin}
 Der Rebin ist eine Neuzuteilung der Channels. Es werden immer 2 nebeneinanderliegende Channels auf einen Channel gelegt. Dadurch wird die Gesamtzahl der Channels halbiert. Bei der Zeitumrechnung muss der Rebinfactor dann natürlich auch berücksichtigt werden.
-Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%
+Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%. Insgesamt machten wir 1325 Exponentialfits und einer schlug fehl.
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}_\text{Rebin}=60\pm20\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
-
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=(60\pm20)\,\text{Channel}_\text{Rebin}=(240\pm80)\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
 
 \subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt. Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
 \begin{align*}
@@ -407,6 +406,13 @@ Damit erhalten wir für die Fit-Funktion im Rebin:
 f(x)&=24+232\cdot\exp(0,012\cdot x)
 \end{align*}
 \gra[1]{endergebnis}{Messdaten mit per Multi-Exponentialfit gefitteter Zerfallsfunktion\label{endergebnis}}
+
+\subsubsection{Multi-Linearfit}
+\gra[0.9]{log}{Logarithmischer Auftrag der Daten}
+\gra[0.9]{log_untergrund}{Logarithmischer Auftrag der Daten mit abgezogenem Untergrund}
+Eine zweite Möglichkeit ist es, die Daten logarithmisch aufzutragen. Da die Daten ungefähr der Funktion $f(x)=A+B\cdot e^{\lambda x}$ entsprechen und $\log{f(x)}=log(A+B\cdot e^{\lambda x})$ gilt, folgt nach vorigem Abziehen des Untergrunds A: $\log{f'(x)}=B'+\lambda x$. Also lässt sich durch Fitten einer Geraden an die logarithmierten Daten ebenfalls die Zerfallskonstante berechnen. Dies machen wir analog zum Multi-Exponentialfit mit einem Multi-Linearfit. Dazu wählen wir nach Augenmaß den Bereich von Channel $80$ bis $520$ und machen innerhalb dieses Bereiches Fits in allen Intervallen mit mindestens 50 Elementen. Dies sind insgesamt $76636$ Linearfits.\\
+\gra[1]{lineargaus}{Verteilung der gefitteten Zerfallskonstanten mit gefitteter Gaußfunktion\label{lineargaus}}
+Aus der Gaußverteilung in Abbildung \ref{lineargaus} kriegt man für die Zerfallskonstante folgenden Wert: $\lambda=(0,00341\pm0,00017) \,\frac1{\text{Channel}}$
 
 \subsubsection{Untergrundmessung}\label{untergrund}
 Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. Der Fehler hierzu ist der statistische Fehler. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.

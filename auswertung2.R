@@ -108,7 +108,7 @@ fitData["A","Std. Error"]=A_err
 fitData["C","Estimate"]=C
 fitData["C","Std. Error"]=C_err
 cat("\n")
-printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe")#,factor=rebinfactor*0.58,error=0.05)
+printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=rebinfactor)#,factor=rebinfactor*0.58,error=0.05)
 
 daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
