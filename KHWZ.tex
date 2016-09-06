@@ -19,7 +19,9 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{titling}
 
+
 \lstset{basicstyle=\scriptsize,breaklines=true} %Quellcode mit Umlauten und ganz klein
+
 \lstset{literate=
   {Ö}{{\"O}}1
   {Ä}{{\"A}}1
@@ -409,11 +411,11 @@ Lower Level & 0.3
 \subsection{Hauptmessung}
 \subsubsection{Multi-Exponentialfit}
 \gra[1]{original}{Messdaten der Hauptmessung\label{original}}
-In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Über die Zeitkalibrierung können die Channel später in Zeiten umgerechnet werden.
+In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Wir haben dabei die ersten 50 Channel vernachlässigt, da wir in diesem Bereich mehrere Ausreißer beobachten konnten. Über die Zeitkalibrierung können die Channel später in Zeiten umgerechnet werden.
 
 Man sieht hier in der ersten Hälfte der Daten den erwarteten exponentiellen Verlauf. Im dritten Viertel sieht man den ausgeschmierten Abfall und im letzten Viertel sieht man den Untergrund der zufälligen Koinzidenzen.
 
-Um aus dem exponentiellen Verlauf der Daten in der ersten Hälfte nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit. Dieser besteht aus vielen Exponentialfits mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
+Um aus dem exponentiellen Verlauf der Daten in der ersten Hälfte nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit, da dies eine höhere Genmauigkeit als ein einzelner Fit liefert und durch die starke Streuung der Daten die Fitgrenzen nicht eindeutig erscheinen. Dieser besteht aus vielen Exponentialfits mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
 
 Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass sehr viele der Fits fehlschlagen. Dies ist vermutlich auf die sehr große Streuung der Datenpunkte zurückzuführen. Eine geringere Streuung der Datenpunkte lässt sich durch einen Rebin erhalten.
 
@@ -423,7 +425,7 @@ Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% 
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=(60\pm20)\,\text{Channel}_\text{Rebin}=(240\pm80)\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung  der Zerfallskonstanten, die wir als Fehler des Mittelwertes angeben. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=(60\pm20)\,\text{Channel}_\text{Rebin}=(240\pm80)\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
 
 \subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt. Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
 \begin{align*}
@@ -505,6 +507,29 @@ T_{\frac12} = 104 \pm 6 \text{ ns}
 
 \section{Zusammenfassung/Diskussion}
 
+\subsection{Zusammenfassung der Ergebnisse}
+
+Ziel des Experiments war die Messung der Halbwertszeit des $14.4$ keV Zustandes von $^{57}$Fe. Wir erhielten hier folgende Ergebnisse:\\
+\\
+Multi-Exponentialfit: 
+
+\begin{align*}
+T_{\frac12} = 123 \pm 41 \text{ ns}
+\end{align*}
+
+Multi-Linearfit:
+
+\begin{align*}
+T_{\frac12} = 104 \pm 6 \text{ ns}
+\end{align*}
+
+Literaturwert: 
+
+\begin{align*}
+T_{\frac12} = 98 \text{ ns}
+\end{align*}
+
+
 
 \newpage
 \section{Anhang}
@@ -558,6 +583,8 @@ T_{\frac12} = 104 \pm 6 \text{ ns}
 \bibitem{anleitung}
  (Zerfall von $^{57}$Co): http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-6-KurzeHalbwertzeiten/Anleitung.pdf
   
+
+
 
   
 %\bibitem{molmasse}
