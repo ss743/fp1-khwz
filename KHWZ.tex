@@ -199,7 +199,7 @@ Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Puls
 Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV peak und dem $14,4$ keV peak angepasst werden (siehe \ref{Energiefenster})
 \paragraph{Time to Amplitude Converter (TAC)} Der Time to Amplitude Converter erzeugt einen in der Höhe  zur Zeitdifferenz zwischen Start- und Stoppsignal proportionalen Rechteckpuls. Ab Eingang des Startsignals wird hierzu ein Kondensator durch Anlegen eines konstanten Stroms aufgeladen. Das Stoppsignal stoppt den Aufladevorgang und wandelt den aufintegrierten Strom in ein Spannungssignal mit fester zeitlicher Länge um. Je nach Amplitude dieses Pulses wird das Signal nun auf die entsprechenden Chanel des MCA verteilt. Um also später bei der Messung der verzögerten und zufälligen Koinzedenzen den einzelnen Channles Zeitdifferenzen zuordnen zu können muss eine Zeiteichung bei gleicher Channelanzahl durchgeführt werden. (siehe \ref{zeiteichung})
 
-\vskip 30 pt
+
 \gra[0.5]{TAC}{Funktionsweise des TAC}
 
 
@@ -210,7 +210,7 @@ Zunächst werden die Energiespektren von Kobalt und Americium aufgenommen. Dabei
 \gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren}
 
 Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Peaks des Americiumspektrums den einzelnen Zerfällen des Zerfallsschemas zugeordnet und so der Kalibrierungsfaktor zwischen der Energie und der Channelanzahl bestimmt. Dies dient dann zur Identifizierung der $^{57}$Fe-Peaks. Außerdem soll an Hand der Energiespektren der optimale Versuchsaufbau bestimmt werden, da z.B. die Erkennbarkeit des $14,4$ keV peak sehr verschieden ist.
-Zur Aufnahme der Energiespektren verwendeten wir folgende Einstellungen:
+
 
 
 
@@ -218,7 +218,7 @@ Zur Aufnahme der Energiespektren verwendeten wir folgende Einstellungen:
 \subsection{Setzen der Energiefenster}\label{Energiefenster}
 
 Im zweiten Teil des Versuchs sollen die Energiefenster an den Single Channel Analyzern eingestellt werden. Hierzu verwenden wir folgende Schaltung:
-\vskip 30 pt
+
 \gra{Schaltung_2}{Versuchsaufbau 2: Einstellen der Energiefenster}
 
 
@@ -226,7 +226,7 @@ Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$
 \subsection{Messung der verzögerten und zufälligen Koinzidenzen}
 Zur Messung der verzögerten und zufälligen Koinzedenzen werden die Einstellungen aus den vorherigen Teilen des Experiments übernommen. Wir verwenden hier folgende Schaltung:
 
-\vskip 30 pt
+
 \gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen}
 
 
@@ -234,7 +234,7 @@ Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der expon
  
 \subsection{Zeitkalibrierung des TAC} \label{zeiteichung}
 
-\vskip 30 pt
+
 \gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung}} 
 
 
@@ -252,7 +252,7 @@ Wir haben für die Auswertung des Versuchs die Programmiersprache R verwendet.
 
 \paragraph{Energiekalibration} Wir haben zunächst die Peaks des $^{241}$Am - Spektrums für beide Detektoren mit Hilfe von Gauß-fits bestimmt.
 
-\vskip 30 pt
+
 \gra[0.8]{Americium}{$^{241}$Am - Spektren mit Gauß-Fit}
 
 
@@ -284,18 +284,17 @@ Peak 3&
 \caption{Peaks des $^{241}$Am-Spektrums}
 \end{table}
 
-\vskip 20 pt
+
 Diese Peaks werden nun an Hand des Zerfallsschemas von $^{241}$Am (Abbildung 8) den entprechenden Energien zugeordnet:
 
-\vskip 30 pt
 \gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am }
 
 
 Die Peaks sind damit den Energien $26.3$ keV, $33.2$ keV und $59.5$ keV zuzuordnen. Wir können nun für beide Szintillatoren die Energiekalibrierung durchführen. Dazu führen wir für die erhaltenen Energie-Chanel-Paare einen Linearen Fit durch:
 
-\vskip 30 pt
+
 \gra[0.8]{linker_szinti}{Energiekalibrierung Linker Szintillator}
-\vskip 20 pt
+
 
 \gra[0.8]{rechter_Szinti}{Energiekalibrierung Rechter Szintillator}
 
@@ -304,7 +303,7 @@ Wir habe hier die zuvor berechneten Standardabweichung der gefitteten Gaußverte
 Hierbei ist anzumerken, das ein linearer Fit mit drei Punkten statistisch wenig sinnvoll ist. Die gefundenen Peaks im Kobalt-Spektrum werden wir daher mit der Channelzahl für die jeweiligen Peaks und dem Energie-Literaturwert in den Fit eintragen und überprüfen, ob sie im Rahmen des Fehlers auf der Geraden liegen.
 Für die aufgenommenen Kobaltspektren haben wir die Peaks ebenfalls Gauß gefittet:
 
-\vskip 30 pt
+
 \gra[0.9]{Cobalt}{Energiespektren von Kobalt}
 
 
@@ -313,9 +312,9 @@ In Abbildung 11 sieht man, dass der $14.4$ keV Peak nur in einem Graphen gut zu 
 \vskip 30 pt
 
 \begin{table}[h!]
-
-\begin{tabular}{l|c|c}
 \centering
+\begin{tabular}{l|c|c}
+
 &links&rechts\\\hline
 Orientierung 1&
  $\mu    = 188.34\pm0.13$&Peak 1: $\mu    = 21.7\pm0.4$\\
@@ -333,15 +332,50 @@ Orientierung 2&
 
 Wir tragen nun die Kobaltpaks mit Literatur-Energiewert($122$ keV bzw. $14.4$ keV) und ihren Standardabweichungen in die Linearen Fits ein, um wie bereits erwähnt, ein Gefühl für die Güte dieser Fits zu bekommen.
 
-\vskip 30 pt
+
 \gra[0.8]{Linker_Szinti_1}{Energiekalibrierung des linken Szintillators mit Kobaltpeaks}
 
 
-\vskip 30 pt
+
 \gra[0.8]{Rechter_Szinti_1}{Energiekalibrierung des linken Szintillators mit Kobaltpeaks}
 
 
 Anhand von Abbildung 13 stellen wir fest, dass die Kobaltpeaks im Rahmen von zwei Standardabweichungen alle auf der Geraden liegen. Wir haben hier die die Fehler des Linearen Fits berücksichtigt, indem wir die steilste und flachste Ausgleichsgerqade in blau eingezeichnet haben. Für den linken Szintillator stimmen die Kobabltpeaks sogar innerhalb einer Standardabweichung mit der Geraden überein. Die größere Abweichung beim rechten Szintillator lässt sich durch die sehr kleinen Fehler der linearen Regression erklären, die bei drei Werten eher zufällig enstanden sein können und nicht den realen Fehlern entsprechen. Hierfür spricht auch, dass die einzelnen Punkte zunächst ähnliche Abweichungen wie beim linken Szintillator zeigen. Da die Energiekalibrierung nur für das Einstellen der Energiefenster wichtig ist, ist sie daher vollkommen ausreichend.
+Für die nächsten Versuchsteile verwenden wir Orienierung 1 der Probe und messen den $14.4$ keV-Peak mit dem rechten Szintillator und den $122$ keV-Peak mit dem linken Oszillator.
+
+\subsection{Energiefenster}
+
+Beim Setzen der Energiefenster haben wir folgende Einstellungen gewählt:
+
+\paragraph{Linker Szintillator ($122$ keV-Peak)}
+\ \\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c}
+Upper Level & 4.5\\\hline
+Lower Level & 3.5 
+\end{tabular}
+
+\end{table}
+
+
+
+\gra{energiefenster_links}{Setzen des Energiefensters Linker Szintillator}
+
+\paragraph{Rechter Szintillator ($14.4$ keV-Peak)}
+\ \\
+\begin{table}[h!]
+\centering
+\begin{tabular}{c|c}
+Upper Level & 0.7\\\hline
+Lower Level & 0.3 
+\end{tabular}
+
+\end{table}
+
+
+\gra{energiefenster_rechts}{Setzen des Energiefensters Rechter Szintillator}
 
 \subsection{Hauptmessung}
 \subsubsection{Multi-Exponentialfit}
@@ -378,6 +412,22 @@ f(x)&=24+232\cdot\exp(0,012\cdot x)
 Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. Der Fehler hierzu ist der statistische Fehler. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
 
 \newpage
+
+\subsection{Zeitkalibration}
+
+Um die Zeitkalibration zu bestimmen, führten wir einen linearen Fit für die gemessenen Delay-Channel - Paare durch. Für einige Delay-Einstellungen, beobachteten wir, dass wir Counts für zwei und nicht nur einen Channel maßen. Für diese berechneten wir die Channelzahl als mit der Anzahl der Counts gewichtetes Mittel. Da die eigentliche fehlerbehaftete Größe hier die Anzahl der Counts ist und diese in der Auswertung der Zeitkalibration nicht relevant sind, tragen wir keine Fehlerbalken für die Messpunkte der Zeitkalibration ein. Der relevante Fehler ist hier der Fehler auf die Steigung des Linearen Fits, der dem statistischen Fehler der linearen Regression entspricht. \\
+Wir tragen zunächst alle Messpunkte graphisch auf:
+
+
+\gra[0.8]{Messpunkte_TAC}{Messpunkte der Zeitkalibrierung des TAC}
+ 
+Wir beobachten, dass es sich bei dem Messpunkt ($39$ Channel/$2.5$ ns) offenbar um einen Ausreißerpunkt handelt. Mögliche Ursache hierfür sind unerkannte systematische Fehler die für kleine Verzögerungen eine größere Rolle spielen. Da wir die Hauptmessung bei einer Verzögerung von 166ns durchführen, und uns daher das Verhalten für größere Verzögerungen interessiert, vernachlässigen wir diesen Punkt für die Lineare Regression.
+
+
+\gra{Fit_TAC}{Zeitkalibrierung des TAC}
+
+Wir erhalten für die Zeitkalibration des TAC: $b=0.512\pm0.018$ ns/channel
+
 \section{Zusammenfassung/Diskussion}
 
 
