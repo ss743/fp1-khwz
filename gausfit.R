@@ -1,4 +1,4 @@
-gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){
+gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){ #--- Fitten der Exponentialfunktion
   
   thegaussian <- y ~ C + N*exp(-(x-mu)^2/(2*sig^2))
   
@@ -17,16 +17,6 @@ gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){
   }
   err=daten$sy
   
-  #cat("\nStartvalues:\n C   = ")
- # cat(ymin)
-  #cat("\n N   = ")
- # cat(ymax)
-  #cat("\n mu  = ")
-#  cat(mu0)
- # cat("\n sig = ")
- # cat(sig0)
-#  cat("\n")
-  
   if(weighted)
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=ymax,mu=mu0,sig=sig0))
   else
@@ -36,7 +26,7 @@ gausfit <- function(input,bereich,weighted=FALSE,sig0=0,N0=0){
   
 }
 
-plotgaus <- function(fitdata,bereich){
+plotgaus <- function(fitdata,bereich){ #--- Plotten der gefitteten Gaußfunktion in vorhandenen Graph
   
   N<-fitdata["N","Estimate"]
   C<-fitdata["C","Estimate"]
@@ -47,7 +37,7 @@ plotgaus <- function(fitdata,bereich){
   
 }
 
-printfitdata <- function(fitdata,title=""){
+printfitdata <- function(fitdata,title=""){ #--- Ausgabe der Gaußfit-Daten
   
   mu<-fitdata["mu","Estimate"]
   smu<-fitdata["mu","Std. Error"]

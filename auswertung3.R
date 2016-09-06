@@ -1,12 +1,19 @@
+#---Einbinden der Libraries
 library(Hmisc)
-
 source("gausfit.R")
+#---Einbinden der Libraries
 
+#---Einlesen der Messdaten
 messung=read.table("data/Hauptmessung.TKA")
+#---Einlesen der Messdaten
 
-rebinfactor=1
+startabschnitt=50 #Vernachlässigen der ersten 50 Channels
+
+#############
+# Rebinning #
+#############
+rebinfactor=1   # => Kein Rebinning, da Linearfits auch trotz großer Streuung funktionieren
 rebinned=c()
-startabschnitt=50
 
 if(rebinfactor>1)
 {
@@ -21,19 +28,21 @@ if(rebinfactor>1)
   rebinned=messung[[1]]  
 }
 
-
+#---Speichern der Daten in Variablen
 bereich=c(startabschnitt,1024/rebinfactor)
-#bereich2=c(50,1024)
-
 messung1=rebinned[bereich[1]:bereich[2]]
-data1=data.frame(x=bereich[1]:bereich[2],y=log(messung1-28),sy=sqrt(messung1))
+data1=data.frame(x=bereich[1]:bereich[2],y=log(messung1-28),sy=sqrt(messung1)) #Abzug des Untergrundes
 data2=data.frame(x=bereich[1]:bereich[2],y=log(messung1),sy=sqrt(messung1))
+#---Speichern der Daten in Variablen
 
+#---Festlegung des Intervalls
 int=c(80,520)/rebinfactor-startabschnitt
+#---Festlegung des Intervalls
 
+###################
+# Multi-Linearfit #
+###################
 daten=data1
-#plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="log(Counts)",cex=pointsize,bty="l")
-
 xdata=daten$x[int[1]:int[2]]
 ydata=daten$y[int[1]:int[2]]
 
@@ -53,8 +62,8 @@ for(i in c(int[1]:(int[2]-width))){
     
     intercept=fm$coefficients["(Intercept)"]
     slope=fm$coefficients["x"]
-    error=summary(fm)$Coefficients["x","Std. Error"]
-    i_error=summary(fm)$Coefficients["(Intercept)","Std. Error"]
+    error=summary(fm)$coefficients["x","Std. Error"]
+    i_error=summary(fm)$coefficients["(Intercept)","Std. Error"]
     slopes[c]=slope
     intercepts[c]=intercept
     err[c]=error
@@ -62,13 +71,18 @@ for(i in c(int[1]:(int[2]-width))){
   }
 }
 
+#---Plot des Histogramms und Gauß-Fit
 result=hist(slopes,breaks=50,plot=FALSE)
 daten=data.frame(x=result$mids,y=result$density,sy=sqrt(result$density))
 plot(result$mids,result$density,type="h",lwd=10,col="gray30",xlab="Zerfallskonstante",ylab="Counts",bty="l")
 bereich=c(which.min(daten$x),which.max(daten$x))
 fit=gausfit(daten,bereich,FALSE,sig0=0.001,N0=2400)
 plotgaus(fit,c(daten$x[bereich[1]],daten$x[bereich[2]]))
+#---Plot des Histogramms und Gauß-Fit
 
+############################
+# Ergebnisse des Gauß-Fits #
+############################
 mu=fit["mu","Estimate"]
 sigma=sqrt((fit["sig","Estimate"])^2)
 
@@ -78,6 +92,9 @@ cat("+-")
 cat(sigma)
 cat(" 1/Channel")
 
+##############################################
+# Suche alle Datensätze zum mittleren lambda #
+##############################################
 count=0
 As=c()
 As_err=c()
@@ -97,6 +114,9 @@ A_err=sqrt(sum(As_err^2))/count
 intercept=A
 slope=mu
 
+#########
+# Plots #
+#########
 daten=data2
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="log(Counts)",cex=pointsize,bty="l")
 grid()

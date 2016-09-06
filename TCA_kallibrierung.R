@@ -1,0 +1,13 @@
+x <- c(39.7, 50.1, 77.2, 91.8, 110.0, 143.0)
+y <- c(2.5, 18, 34, 42, 50, 66) 
+plot(x, y, xlim=c(20, 160), ylim=c(0, 70), xlab = "channel", ylab = "time", pch=4)
+fm <- lm(y ~ x)
+summary(fm)
+abline(fm, col = "red")
+
+x <- c(50.1, 77.2, 91.8, 110.0, 143.0)
+y <- c(18, 34, 42, 50, 66) 
+plot(x, y, xlim=c(20, 160), ylim=c(0, 70), xlab = "channel", ylab = "time", pch=4)
+fm2 <- lm(y ~ x)
+summary(fm2)
+abline(fm2, col = "red")

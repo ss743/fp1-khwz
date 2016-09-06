@@ -1,8 +1,9 @@
-#library(ggplot2)
+#---Einbinden der Libraries
 library(Hmisc)
-
 source("gausfit.R")
+#---Einbinden der Libraries
 
+#---Einlesen der Messdaten
 am1=read.table("data/Americium_1.TKA")
 am2=read.table("data/Americium_2.TKA")
 co1=read.table("data/Cobalt_1.TKA")
@@ -22,14 +23,19 @@ co4data <- data.frame(x=1:256,y=co4[[1]],sy=sqrt(co4[[1]]))
 co5data <- data.frame(x=1:256,y=co5[[1]],sy=sqrt(co5[[1]]))
 ef1data <- data.frame(x=1:256,y=ef1[[1]],sy=sqrt(ef1[[1]]))
 ef2data <- data.frame(x=1:256,y=ef2[[1]],sy=sqrt(ef2[[1]]))
+#---Einlesen der Messdaten
 
+#---Setzen der Plotparameter
 plottype <- "p"
 pointsize<- 0.6
-
 weighted <- TRUE
+#---Setzen der Plotparameter
 
 par(mfrow=c(1,2))
 
+###################
+# Americium-Peaks #
+###################
 cat("Americium \n\n")
 cat(" links:\n")
 plot(am1data$x,am1data$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,xaxt="n",yaxt="n",bty="l")
@@ -71,6 +77,9 @@ axis(1,at=c(0:10)*25)
 axis(2,at=c(0:20)*10000)
 grid()
 
+################
+# Cobalt-Peaks #
+################
 par(mfrow=c(2,2))
 
 plot(co2data$x,co2data$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,xaxt="n",yaxt="n",bty="l")
@@ -130,7 +139,9 @@ printfitdata(rechts1b,"Orientierung 1, Peak 1")
 printfitdata(rechts1a,"Orientierung 1, Peak 2")
 printfitdata(rechts2,"Orientierung 2")
 
-
+#############################
+# Setzen der Energiefenster #
+#############################
 par(mfrow=c(1,1))
 
 plot(ef1data$x,ef1data$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,xaxt="n",yaxt="n",bty="l")

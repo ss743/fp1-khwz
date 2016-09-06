@@ -19,7 +19,7 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{titling}
 
-\lstset{basicstyle=\scriptsize} %Quellcode mit Umlauten und ganz klein
+\lstset{basicstyle=\scriptsize,breaklines=true} %Quellcode mit Umlauten und ganz klein
 \lstset{literate=
   {Ö}{{\"O}}1
   {Ä}{{\"A}}1
@@ -419,7 +419,7 @@ Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass
 
 \subsubsection{Rebin}
 Der Rebin ist eine Neuzuteilung der Channels. Es werden immer 2 nebeneinanderliegende Channels auf einen Channel gelegt. Dadurch wird die Gesamtzahl der Channels halbiert. Bei der Zeitumrechnung muss der Rebinfactor dann natürlich auch berücksichtigt werden.
-Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%. Insgesamt machten wir 1325 Exponentialfits und einer schlug fehl.
+Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%. Insgesamt machten wir 1325 Exponentialfits und einer schlug fehl.\\
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
@@ -436,15 +436,15 @@ f(x)&=24+232\cdot\exp(0,012\cdot x)
 \end{align*}
 \gra[1]{endergebnis}{Messdaten mit per Multi-Exponentialfit gefitteter Zerfallsfunktion\label{endergebnis}}
 
+\subsubsection{Untergrundmessung}\label{untergrund}
+Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. Der Fehler hierzu ist der statistische Fehler. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
+
 \subsubsection{Multi-Linearfit}
 \gra[0.9]{log}{Logarithmischer Auftrag der Daten}
 \gra[0.9]{log_untergrund}{Logarithmischer Auftrag der Daten mit abgezogenem Untergrund}
-Eine zweite Möglichkeit ist es, die Daten logarithmisch aufzutragen. Da die Daten ungefähr der Funktion $f(x)=A+B\cdot e^{\lambda x}$ entsprechen und $\log{f(x)}=log(A+B\cdot e^{\lambda x})$ gilt, folgt nach vorigem Abziehen des Untergrunds A: $\log{f'(x)}=B'+\lambda x$. Also lässt sich durch Fitten einer Geraden an die logarithmierten Daten ebenfalls die Zerfallskonstante berechnen. Dies machen wir analog zum Multi-Exponentialfit mit einem Multi-Linearfit. Dazu wählen wir nach Augenmaß den Bereich von Channel $80$ bis $520$ und machen innerhalb dieses Bereiches Fits in allen Intervallen mit mindestens 50 Elementen. Dies sind insgesamt $76636$ Linearfits.\\
+Eine zweite Möglichkeit ist es, die Daten logarithmisch aufzutragen. Da die Daten ungefähr der Funktion $f(x)=A+B\cdot e^{\lambda x}$ entsprechen und $\log{f(x)}=log(A+B\cdot e^{\lambda x})$ gilt, folgt nach vorigem Abziehen des gemessenen Untergrunds A: $\log{f'(x)}=B'+\lambda x$. Also lässt sich durch Fitten einer Geraden an die logarithmierten Daten ebenfalls die Zerfallskonstante berechnen. Dies machen wir analog zum Multi-Exponentialfit mit einem Multi-Linearfit. Dazu wählen wir nach Augenmaß den Bereich von Channel $80$ bis $520$ und machen innerhalb dieses Bereiches Fits in allen Intervallen mit mindestens 50 Elementen. Dies sind insgesamt $76636$ Linearfits.\\
 \gra[1]{lineargaus}{Verteilung der gefitteten Zerfallskonstanten mit gefitteter Gaußfunktion\label{lineargaus}}
 Aus der Gaußverteilung in Abbildung \ref{lineargaus} kriegt man für die Zerfallskonstante folgenden Wert: $\lambda=(0,00341\pm0,00017) \,\frac1{\text{Channel}}$
-
-\subsubsection{Untergrundmessung}\label{untergrund}
-Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. Der Fehler hierzu ist der statistische Fehler. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
 
 \newpage
 
@@ -509,10 +509,29 @@ T_{\frac12} = 104 \pm 6 \text{ ns}
 \newpage
 \section{Anhang}
 
-\subsection{Tabellen}
+\subsection{Sourcecode}
+\subsubsection*{auswertung.R}
+\lstinputlisting[language=R]{auswertung.R}
+\subsubsection*{auswertung2.R}
+\lstinputlisting[language=R]{auswertung2.R}
+\subsubsection*{auswertung3.R}
+\lstinputlisting[language=R]{auswertung3.R}
+\subsubsection*{gausfit.R}
+\lstinputlisting[language=R]{gausfit.R}
+\subsubsection*{expfit.R}
+\lstinputlisting[language=R]{expfit.R}
+\subsubsection*{multiexpfit.R}
+\lstinputlisting[language=R]{multiexpfit.R}
+\subsubsection*{konstfit.R}
+\lstinputlisting[language=R]{konstfit.R}
+\subsubsection*{TCA\_kalibrierung.R}
+\lstinputlisting[language=R]{expfit.R}
+\subsubsection*{Energiekalibrierung.R}
+\lstinputlisting[language=R]{Energiekalibrierung.R}
+\subsection{Rohdaten}
 
 %\subsubsection{$\alpha$-Plateau Samarium}
-%\lstinputlisting[language=MATLAB]{Rohdaten/alphaPlateau_Sm.txt}
+%\lstinputlisting{data/Americium_1.TKA}
 
 
 %\newpage

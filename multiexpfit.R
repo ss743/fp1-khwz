@@ -1,4 +1,6 @@
+#---Einbinden der Libraries
 source("expfit.R")
+#---Einbinden der Libraries
 
 multiexpfit <- function(input,bereich,width,weighted=FALSE){
   count=0
@@ -16,10 +18,6 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   bin_counts_fehl=rep(0,bereich[2])
   for (i in bereich[1]:(bereich[2]-width)){
     for (j in (i+width):bereich[2]){
-      #cat("\ni: ")
-      #cat(i)
-      #cat(", j: ")
-      #cat(j)
       total=total+1
       breite[total]=j-i
       succeeded=FALSE
@@ -27,7 +25,6 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
       result = tryCatch({
         fit=expfit(input,c(i,j),weighted)
         succeeded=TRUE
-        #printexpdata(fit)
         l=fit["lambda","Estimate"]
         if(!is.na(l)){
           count=count+1
@@ -39,24 +36,15 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
           C_err[count]=fit["C","Std. Error"]
         }
       }, warning = function(w) {
-        cat("Nich so gut:")
-        print(w)
 
       }, error = function(e) {
-        #cat("Ziemlich doof:")
-        #print(e)
-        #cat("\nStart-Bin: ")
-        #cat(i)
-        #cat("\nStop-Bin:")
-        #cat("\n")
+        
     }, finally = {
-        #cat("\n")
-      if(!succeeded){
-        count_fehl=count_fehl+1
-        #print(count_fehl)
-        breite_fehl[count_fehl]=j-i
-        bin_counts_fehl[i:j]=bin_counts_fehl[i:j]+1
-      }
+        if(!succeeded){
+          count_fehl=count_fehl+1
+          breite_fehl[count_fehl]=j-i
+          bin_counts_fehl[i:j]=bin_counts_fehl[i:j]+1
+        }
       
       })
     }
@@ -66,13 +54,6 @@ multiexpfit <- function(input,bereich,width,weighted=FALSE){
   cat("\nGemachte Fits: ")
   cat(count)
   
-  #h1=hist(breite)
-  #print(breite_fehl)
-  #h2=hist(breite_fehl,add=TRUE)
-  
-  #plot(h1$mid,h2$density/h1$density,type="h")
-  #plot(daten$x[1]:daten$x[bereich[2]],bin_counts_fehl/bin_counts)
-  
-  
+
   return(data.frame(lambda,error,A,C,A_err,C_err))
 }
