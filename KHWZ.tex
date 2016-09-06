@@ -200,14 +200,14 @@ Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für 
 \paragraph{Time to Amplitude Converter (TAC)} Der Time to Amplitude Converter erzeugt einen in der Höhe  zur Zeitdifferenz zwischen Start- und Stoppsignal proportionalen Rechteckpuls. Ab Eingang des Startsignals wird hierzu ein Kondensator durch Anlegen eines konstanten Stroms aufgeladen. Das Stoppsignal stoppt den Aufladevorgang und wandelt den aufintegrierten Strom in ein Spannungssignal mit fester zeitlicher Länge um. Je nach Amplitude dieses Pulses wird das Signal nun auf die entsprechenden Chanel des MCA verteilt. Um also später bei der Messung der verzögerten und zufälligen Koinzedenzen den einzelnen Channles Zeitdifferenzen zuordnen zu können muss eine Zeiteichung bei gleicher Channelanzahl durchgeführt werden. (siehe \ref{zeiteichung})
 
 
-\gra[0.5]{TAC}{Funktionsweise des TAC}
+\gra[0.5]{TAC}{Funktionsweise des TAC $^{\cite{anleitung}}$}
 
 
 
 \subsection{Aufnahme der Energiespektren}
 Zunächst werden die Energiespektren von Kobalt und Americium aufgenommen. Dabei muss das Spektrum jeweils von beiden Detektoren aufgenommen werden und zusätzlich beim Kobalt auch in beiden Orientierungen. So soll bestimmt werden, mit welchem Detektor nachher welcher Peak ($14,4$ keV bzw.$122$ keV) gemessen wird. Hierfür verwenden wir folgende Schaltung:
 \vskip 30 pt
-\gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren}
+\gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren $^{\cite{anleitung}}$}
 
 Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Peaks des Americiumspektrums den einzelnen Zerfällen des Zerfallsschemas zugeordnet und so der Kalibrierungsfaktor zwischen der Energie und der Channelanzahl bestimmt. Dies dient dann zur Identifizierung der $^{57}$Fe-Peaks. Außerdem soll an Hand der Energiespektren der optimale Versuchsaufbau bestimmt werden, da z.B. die Erkennbarkeit des $14,4$ keV peak sehr verschieden ist.
 
@@ -219,7 +219,7 @@ Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Pea
 
 Im zweiten Teil des Versuchs sollen die Energiefenster an den Single Channel Analyzern eingestellt werden. Hierzu verwenden wir folgende Schaltung:
 
-\gra{Schaltung_2}{Versuchsaufbau 2: Einstellen der Energiefenster}
+\gra{Schaltung_2}{Versuchsaufbau 2: Einstellen der Energiefenster $^{\cite{anleitung}}$}
 
 
 Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$ keV peaks (siehe \ref{Auswertung}) und setzen die Energiefenster der SCAs so, dass nur für den $122$ keV peak bzw. den $14,4$ keV peak ein Signal erzeugt wird.
@@ -227,7 +227,7 @@ Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$
 Zur Messung der verzögerten und zufälligen Koinzedenzen werden die Einstellungen aus den vorherigen Teilen des Experiments übernommen. Wir verwenden hier folgende Schaltung:
 
 
-\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen}
+\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen $^{\cite{anleitung}}$}
 
 
 Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der exponentielle Anstieg zu sehen ist, im dritten Viertel der ausgeschmierte Abfall zu sehen ist und im letzten Viertel die zufälligen Koinzidenzen, d.h. der Untergrund zu sehen ist.
@@ -235,12 +235,41 @@ Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der expon
 \subsection{Zeitkalibrierung des TAC} \label{zeiteichung}
 
 
-\gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung}} 
+\gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung} $^{\cite{anleitung}}$} 
 
 
 Zur Messung der Zeitkalibrierung des TAC wird das Signal eines SCA aufgeteilt und ein Zweig unverzögert als Startsignal an den TAC weitergeleitet während der zweite Zweig über die Delay-Box verzögert wird und als Stoppsignal an den TAC angelegt wird. Wir erhalten so durch Einstellen verschiedener Delay-Zeiten Chanel-Zeit-Paare, mit denen die Zeitkalibrierung durchgeführt wird.
 Zu beachten ist hierbei, dass die gleiche Chanel-Anzahl wie beim vorherigen Versuchsteil gewählt wird.
 Der Versuchsaufbau zu dieser Messung ist in Abbildung \ref{zeitkalibrierung} dargestellt.
+
+\subsection{Messeinstellungen}
+
+\begin{align*}
+\textbf{Amplifier 1}\\
+\text{Amplifier gain: } & 0.87\\
+\text{Coarse gain: } & 200\\
+\text{Shaping time: } & 0.5\mu s\\
+\textbf{SCA 1}\\
+\text{Upper Level: } & 4.5\\
+\text{Lower Level: } & 3.5\\
+\text{Delay: } & 0.0\\
+\textbf{Amplifier 2}\\
+\text{Amplifier gain: } & 0.50\\
+\text{Coarse gain: } & 200\\
+\text{Shaping time: } & 0.5\mu s\\
+\textbf{SCA 2}\\
+\text{Upper Level: } & 0.7\\
+\text{Lower Level: } & 0.3\\
+\text{Delay: } & 1.0\\
+\textbf{TCA}\\
+\text{Rangel: } & 0.05\mu s\\
+\text{Amplitude: } & 5 v\\
+\text{Multiplier: } & \times 10\\
+\textbf{Delay}\\
+\text{Delay 1: } & 0.05\mu s\\
+\text{Delay 2: } & 5 v\\
+\text{Delay 3: } & \times 10\\
+\end{align*}
 
 
 \newpage
@@ -287,7 +316,7 @@ Peak 3&
 
 Diese Peaks werden nun an Hand des Zerfallsschemas von $^{241}$Am (Abbildung 8) den entprechenden Energien zugeordnet:
 
-\gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am }
+\gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am $^{\cite{anleitung}}$}
 
 
 Die Peaks sind damit den Energien $26.3$ keV, $33.2$ keV und $59.5$ keV zuzuordnen. Wir können nun für beide Szintillatoren die Energiekalibrierung durchführen. Dazu führen wir für die erhaltenen Energie-Chanel-Paare einen Linearen Fit durch:
@@ -432,7 +461,47 @@ Wir beobachten, dass es sich bei dem Messpunkt ($39$ Channel/$2.5$ ns) offenbar 
 
 \gra{Fit_TAC}{Zeitkalibrierung des TAC}
 
-Wir erhalten für die Zeitkalibration des TAC: $b=0.512\pm0.018$ ns/channel
+Wir erhalten für die Zeitkalibration des TAC: $b=0.512\pm0.018$ ns/channel, d.h. 1 Channel entspricht $0.512\pm0.018$ 
+
+\subsection{Berechnung der Halbwertszeit des $14.4$keV Zustandes}
+
+\subsubsection{Exponentieller Fit}
+
+Wir erhielten für den exponentiellen Fit eine Zerfallskonstante von  $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$ und eine Halbwertszeit von $T_{\frac12}=\frac{\ln2}{\lambda}=240\pm80\,\text{Channel}$. Dies kann mit dem Faktor $b=0.512\pm0.018$ ns/channel nun in ns umgerechnet werden:
+
+\begin{align*}
+T_{\frac12} = 240\text{ Channel} = 122.88 \text{ ns}
+\end{align*}
+
+mit der Unsicherheit:
+
+\begin{align*}
+S_{T_{\frac12}} = \sqrt{\left(\frac{s_{T_{{\frac12}_{ch}}}}{T_{{\frac12}_{ch}}}\right)^2+\left(\frac{s_b}{b}\right)^2} \cdot T_{\frac12} = 41.2 \text{ ns}
+\end{align*}
+
+Somit erhalten wir:
+\begin{align*}
+T_{\frac12} = 123 \pm 41 \text{ ns}
+\end{align*}
+
+\subsubsection{Linearer Fit}
+
+Wir erhielten für den linearen Fit eine Zerfallskonstante von  $\lambda=(0,00341\pm0,00017)\, \frac1{\text{Channel}}$ und eine Halbwertszeit von $T_{\frac12}=\frac{\ln2}{\lambda}=203\pm10\,\text{Channel}$. Dies kann mit dem Faktor $b=0.512\pm0.018$ ns/channel nun in ns umgerechnet werden:
+
+\begin{align*}
+T_{\frac12} = 203\text{ Channel} = 103.94 \text{ ns}
+\end{align*}
+
+mit der Unsicherheit:
+
+\begin{align*}
+S_{T_{\frac12}} = \sqrt{\left(\frac{s_{T_{{\frac12}_{ch}}}}{T_{{\frac12}_{ch}}}\right)^2+\left(\frac{s_b}{b}\right)^2} \cdot T_{\frac12} = 6.29 \text{ ns}
+\end{align*}
+
+Somit erhalten wir:
+\begin{align*}
+T_{\frac12} = 104 \pm 6 \text{ ns}
+\end{align*}
 
 \section{Zusammenfassung/Diskussion}
 
