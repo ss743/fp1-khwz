@@ -80,6 +80,7 @@ count=0
 As=c()
 As_err=c()
 Cs=c()
+Cs_err=c()
 for(i in c(1:length(multiexpfit$lambda)))
 {
   if(mu-sigma/5 < multiexpfit$lambda[i] && multiexpfit$lambda[i] < mu+sigma/5)
@@ -88,6 +89,7 @@ for(i in c(1:length(multiexpfit$lambda)))
     As[count]=multiexpfit$A[i]
     Cs[count]=multiexpfit$C[i]
     As_err[count]=multiexpfit$A_err[i]
+    Cs_err[count]=multiexpfit$C_err[i]
   }
 }
 
@@ -95,6 +97,7 @@ for(i in c(1:length(multiexpfit$lambda)))
 A=sum(As)/count
 C=sum(Cs)/count
 A_err=sqrt(sum(As_err^2))/count
+C_err=sqrt(sum(Cs_err^2))/count
 
 
 fitData=data.frame(matrix(vector(),1,2,dimnames=list(c("lambda"),c("Estimate","Std. Error"))),stringsAsFactors=FALSE)
@@ -103,8 +106,9 @@ fitData["lambda","Std. Error"]=fit["sig","Estimate"]
 fitData["A","Estimate"]=A
 fitData["A","Std. Error"]=A_err
 fitData["C","Estimate"]=C
+fitData["C","Std. Error"]=C_err
 cat("\n")
-printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe",factor=rebinfactor*0.58,error=0.05)
+printexpdata(fitData,title="Werte für den 14,4 keV-Zustand von 57Fe")#,factor=rebinfactor*0.58,error=0.05)
 
 daten=data1
 plot(daten$x,daten$y,type=plottype,pch=4,xlab="Channel",ylab="Counts",cex=pointsize,bty="l")
@@ -115,6 +119,20 @@ grid()
 #konstfitbereich=c(420,512)
 konstfitbereich=c(840,1024)/rebinfactor
 plotexp(fitData,bereich_bins)
+
+lambda<-fitData["lambda","Estimate"]
+C<-fitData["C","Estimate"]
+A<-fitData["A","Estimate"]
+
+
+cat("\n")
+cat(A)
+cat("+")
+cat(C)
+cat("*exp(")
+cat(lambda)
+cat("*t)\n")
+
 konst=konstfit(daten,konstfitbereich-startabschnitt)
 lines(konstfitbereich,konst,type="l",col="red")
 cat("Untergrund\n Gefittet: ")
@@ -125,6 +143,11 @@ cat("\n Gemessen: ")
 cat(konst[1]/rebinfactor)
 cat("+-")
 cat(konsterror(daten,konstfitbereich-startabschnitt,konst[1])/rebinfactor)
+cat("\nMultiplikative Konstante: ")
+cat(C)
+cat("+-")
+cat(C_err)
+
 #data=daten[420:500,]
 #a=sum(data$y)/(80)
 

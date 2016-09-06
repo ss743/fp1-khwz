@@ -167,10 +167,14 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsection{Messprinzip}
  \subsubsection{Messung der Zerfallsdauern}
  
- \paragraph{Verzögerte Koinzidenzen}Um die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe zu bestimmen, messen wir die einzelnen Lebensdauern der angeregten $^{57}$Fe-Atome. Der Zustand entsteht unter Emission eines $122,1$ keV-$\gamma$-Quants und zerfällt unter Emission eines $14,4$ keV-$\gamma$-Quants, so dass wir die Zeitmessung mit Detektion des $122,1$ keV-Photons starten und mit Detektion des $14,4$ keV-Photons beenden könnten. Bei diesem Verfahren allerdings tritt das Problem auf, dass nur ca. 10\% der $^{57}$Fe-Atome über $\gamma$-Zerfall und ca. 90\% über innere Konversion zerfallen. Wenn nun ein $122,1$ keV-Photon detektiert wird und kein dazugehöriges $14,4$ keV-Photon erzeugt wird, dann wird die Messung nicht beendet, wodurch die Totzeit vergrößert und die Messung verfälscht wird.
+ \paragraph{Verzögerte Koinzidenzen}Um die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe zu bestimmen, messen wir die einzelnen Lebensdauern der angeregten $^{57}$Fe-Atome. Der Zustand entsteht unter Emission eines $122,1$ keV-$\gamma$-Quants und zerfällt unter Emission eines $14,4$ keV-$\gamma$-Quants, so dass wir die Zeitmessung mit Detektion des $122,1$ keV-Photons starten und mit Detektion des $14,4$ keV-Photons beenden könnten. Bei diesem Verfahren allerdings tritt das Problem auf, dass nur ca. 10\% der $^{57}$Fe-Atome über $\gamma$-Zerfall und ca. 90\% über innere Konversion zerfallen. Wenn nun ein $122,1$ keV-Photon detektiert wird und kein dazugehöriges $14,4$ keV-Photon erzeugt wird, dann wird die Messung nicht beendet, wodurch die Totzeit vergrößert und die Messung verfälscht wird. 
+ 
  Um dieses Problem zu umgehen, benutzt man die Methode der verzögerten Koinzidenzen. Bei dieser Methode wird das Signal der $122,1$ keV-Photonen verzögert, so dass das Signal nach dem Signal der $14,4$ keV-Photonen ankommt. Dann wird das Signal der $14,4$ keV-Photonen als Start- und das der $122,1$ keV-Photonen als Stop-Signal verwendet. Die gemessene Differenz wird nun von der Verzögerung abgezogen, um die tatsächliche Lebensdauer zu erhalten.
+ 
  Der radioaktive Zerfall ist ein statistischer Prozess (siehe \ref{zerfallsgesetz}), mit der Anzahl $N(t)$ der nach einer Zeit $t$ noch vorhandenen Kerne: $N(t)=N_0\exp({-\frac t \tau})$ Die gemessenen Zeiten $\Delta t$ folgen ebenso dieser Exponentialverteilung um die mittlere Lebensdauer $\tau$.
  Durch das Vertauschen von Start- und Stoppsignal wird diese Exponentialverteilung an der y-Achse gespiegelt, sodass erst durch Zeitverzögerung die Exponentialverteilung im positiven x-Achsen-Bereich  (und damit messbar) ist. Beim Messen der verzögerten Koinzidenzen erwarten wir demnach einen exponentiellen Anstieg.
+ 
+ Nach diesem Anstieg sollten die Messwerte sofort auf Null, bzw. auf den Untergrund zurückfallen, da dies ein Stop- vor dem Startsignal bedeuten würde. Aufgrund unterschiedlicher Laufzeiten der Signale in den Kabeln und statistischer Fluktuationen in den Kabeln ist dieser Abfall aber nicht glatt sondern deutlich ausgeschmiert.
  
  \paragraph{Zufällige Koinzedenzen} Da das Start- und Stoppsignal am TAC nicht zwingend vom selben Kern, d.h. vom selben Zerfallsprozess, stammt müssen diese zufälligen Koinzidenzen, die einen Untergrund bei der Messung der verzögerten Koinzidenzen darstellen, ebenfalls gemessen werden. Diese Messung kann gleichzeitig mit der Messung der verzögerten Koinzidenzen durchgeführt werden, in dem der Delay (die Zeitverzögerung) so gewählt wird, dass der exponentielle Anstieg nur die erste Hälfte des Fensters einnimmt, sodass die zufälligen Koinzidenzen im letzten Viertel des Plots beobachtbar sind. 
  
@@ -342,22 +346,37 @@ Anhand von Abbildung 13 stellen wir fest, dass die Kobaltpeaks im Rahmen von zwe
 \subsection{Hauptmessung}
 \subsubsection{Multi-Exponentialfit}
 \gra[1]{original}{Messdaten der Hauptmessung\label{original}}
-In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Über die Zeitkalibrierung können die Channels später in Zeiten umgerechnet werden.
+In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Über die Zeitkalibrierung können die Channel später in Zeiten umgerechnet werden.
 
-Die erste Hälfte der Daten zeigt die erwartete Exponentialkurve auf. Um aus dieser nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit. Dieser besteht aus vielen Exponentialfits mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
+Man sieht hier in der ersten Hälfte der Daten den erwarteten exponentiellen Verlauf. Im dritten Viertel sieht man den ausgeschmierten Abfall und im letzten Viertel sieht man den Untergrund der zufälligen Koinzidenzen.
+
+Um aus dem exponentiellen Verlauf der Daten in der ersten Hälfte nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit. Dieser besteht aus vielen Exponentialfits mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
 
 Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass sehr viele der Fits fehlschlagen. Dies ist vermutlich auf die sehr große Streuung der Datenpunkte zurückzuführen. Eine geringere Streuung der Datenpunkte lässt sich durch einen Rebin erhalten.
+
 \subsubsection{Rebin}
 Der Rebin ist eine Neuzuteilung der Channels. Es werden immer 2 nebeneinanderliegende Channels auf einen Channel gelegt. Dadurch wird die Gesamtzahl der Channels halbiert. Bei der Zeitumrechnung muss der Rebinfactor dann natürlich auch berücksichtigt werden.
 Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% aller Exponentialfits fehl. Nach einem zweiten Rebin auf 256 Kanäle verbesserte sich die Situation und wir erhielten eine Erfolgsquote von über 99\%
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}$. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.\\
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten erhält man nun den Mittelwert und die Standardabweichung der Zerfallskonstanten. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=60\pm20\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
+
+
+\subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt. Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
+\begin{align*}
+A&=24\pm8 \text{ Counts}\\
+B&=232\pm6 \text{ Counts}
+\end{align*}
+Damit erhalten wir für die Fit-Funktion:
+\begin{align*}
+f(x)&=24+232\cdot\exp(0,012\cdot x)
+\end{align*}
 \gra[1]{endergebnis}{Messdaten mit per Multi-Exponentialfit gefitteter Zerfallsfunktion\label{endergebnis}}
 
-\subsubsection{Untergrundmessung}
-Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
+\subsubsection{Untergrundmessung}\label{untergrund}
+Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Diese ist nun im hinteren Viertel der Messdaten sichtbar. Zum Berechnen des Untergrundes bilden wir den Mittelwert der Messpunkte und fitten eine konstante Gerade an die Messpunkte. Der Fehler hierzu ist der statistische Fehler. In den Multi-Exponentialfits haben wir den Untergrund durch einen zusätzlichen additiven Parameter jedoch bereits berücksichtigt. Wir überprüfen nun die Übereinstimmung der beiden Untergrundberechnungen. Der gefittete Wert für den Untergrund ist $24\pm8$ Counts und der gemessene Wert beträgt $28\pm3$ Counts. Diese Werte stimmen also innerhalb einer Standardabweichung gut überein.
+
 \newpage
 \section{Zusammenfassung/Diskussion}
 
