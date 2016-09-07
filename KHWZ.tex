@@ -88,14 +88,14 @@
 \section{Einleitung}
 
 
-In diesem Versuch soll die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt werden. Dieser Zustand kann durch den Zerfall von $^{57}$Co durch Elektroneneinfang und anschließenden $\gamma$-Zerfall des $^{57}$Fe erzeugt werden. Zum Messen der Halbwertszeit dieses Zerfalls wird die Zeit zwischen der Detektierung des $122,1$ keV-Photons, welches beim Entstehen des $14,4$ keV-Zustands ausgesendet wird, und der Detektierung des $14,4$ keV-Photons, welches beim Zerfall des $14,4$ keV-Zustands in den Grundzustand ensteht, gemessen. Da nur ein kleiner Teil der mit $14,4$ keV angeregten Eisenkerne unter Aussendung eines Photons zerfällt und so nicht zu jedem $122,1$ keV-Photon ein $14,4$ keV-Photon entsteht, wird zum Messen die Methode der verzögerten Koinzidenzen benutzt.
+In diesem Versuch soll die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt werden. Dieser Zustand kann durch den Zerfall von $^{57}$Co durch Elektroneneinfang und anschließenden $\gamma$-Zerfall des $^{57}$Fe erzeugt werden (siehe Abbildung \ref{zerfallsschema}). Das Messen der Halbwertszeit auf die übliche Methode funktioniert hier nicht, da die Kerne zu schnell zerfallen. Zum Messen der Halbwertszeit dieses Zerfalls wird deshalb die Zeit zwischen der Detektierung des $122,1$ keV-Photons, welches beim Entstehen des $14,4$ keV-Zustands ausgesendet wird, und der Detektierung des $14,4$ keV-Photons, welches beim Zerfall des $14,4$ keV-Zustands in den Grundzustand ensteht, gemessen. Da nur ein kleiner Teil der mit $14,4$ keV angeregten Eisenkerne unter Aussendung eines Photons zerfällt und so nicht zu jedem $122,1$ keV-Photon ein $14,4$ keV-Photon entsteht, wird zum Messen die Methode der verzögerten Koinzidenzen benutzt. Dies bedeutet, dass das Startsignal verzögert und als Stoppsignal verwendet wird, während das ursprüngliche Startsignal zum Stoppen der Messung verwendet wird.
 \\\\
 Zunächst werden die Energie-Spektren von $^{57}$Co und $^{241}$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
 
 \vskip 50pt
-\gra{Cobaldt-Zerfall}{Zerfallsschema von $^{57}$Co $^{\cite{anleitung}}$}
+\gra{Cobaldt-Zerfall}{Zerfallsschema von $^{57}$Co \cite{anleitung}\label{zerfallsschema}}
 %\newpage
-%\section[Aufgabenstellung]{Aufgabenstellung}%$^{\cite{anleitung}}$}
+%\section[Aufgabenstellung]{Aufgabenstellung}%\cite{anleitung}}
 %Zum Bestimmen der Halbwertszeit werden zunächst die Energie-Spektren von $^{}57$Co und $^{241}$Am aufgenommen. Anschließend wird eine Zeiteichung des Time to Amplitude Converters (TAC) durchgeführt. Dann wird eine Untergrundmessung ohne Signalverzögerung durchgeführt um die zufälligen Koinzidenzen zu messen. Nun werden die verzögerten Koinzidenzen gemessen und daraus die Halbwertszeit des $14,4$ keV-Zustands von $^{57}$Fe bestimmt.
 
 
@@ -105,9 +105,10 @@ Zunächst werden die Energie-Spektren von $^{57}$Co und $^{241}$Am aufgenommen. 
 
 
 \newpage
-\section[Theoretische Grundlagen]{Theoretische Grundlagen $^{\cite{anleitung}}$ $^{\cite{nuclear}}$}
+\section[Theoretische Grundlagen]{Theoretische Grundlagen}
+In diesem Teil haben wir uns weitgehend an den folgenden Quellen orientiert: \cite{anleitung} \cite{nuclear}
 \subsection{Zerfallsgesetz}\label{zerfallsgesetz}
-Der radioaktive Zerfall ist ein statistischer Prozess d.h. der genaue Zeitpunkt zu dem ein Kern zerfällt kann nicht vorhergesagt werden, stattdessen wird mit Wahrscheinlichkeiten gearbeitet. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
+Der radioaktive Zerfall ist ein statistischer Prozess, d.h. der genaue Zeitpunkt, zu dem ein Kern zerfällt, kann nicht vorhergesagt werden. Wir können nur Wahrscheinlichkeiten angeben. Die Zerfallsrate $dN/dt$ ist abhängig von der momentanen Anzahl $N$ der Atome.
 \[\frac{dN}{dt}=-\lambda N\]
 wobei $\lambda$ die Zerfallskonstante ist, welche den Bruchteil der zu Beginn vorhandenen Kerne, die pro Zeiteinheit zerfallen beschreibt. Zerfallskonstanten einzelner Zerfälle addieren sich, zerfällt ein Kern auf mehrere Arten. Durch Lösen dieser Differentialgleichung erhält man die Anzahl der Kerne $N$ zum Zeitpunkt $t$.
 \[N(t)=N_0e^{-\lambda t}\hspace{0.5cm}\]
@@ -115,8 +116,8 @@ wobei $N_0=N(t=0)$ die anfängliche Anzahl der Kerne beschreibt. Hieraus lässt 
 \[\tau=\frac{1}{\lambda}\]
 welche mit der Halbwertszeit $T_{1/2}$ wie folgt zusammenhängt:
 \[T_{1/2} = \ln2\cdot \tau = \frac{\ln2}{\lambda}\]
-Eine weitere wichtige Größe ist die Aktivität $A$ welche die Anzahl der Zerfälle pro Sekunde beschreibt und in Becquerel ( $Bq=1/s$) gemessen wird:
-\[A = \lambda N = \frac{N}{\tau} = \frac{N\ln2}{T_{1/2}}\]
+%Eine weitere wichtige Größe ist die Aktivität $A$ welche die Anzahl der Zerfälle pro Sekunde beschreibt und in Becquerel ( $Bq=1/s$) gemessen wird:
+%\[A = \lambda N = \frac{N}{\tau} = \frac{N\ln2}{T_{1/2}}\]
 \subsection{Radioaktive Zerfälle}
 Instabile Atomkerne gehen, je nach Art des Zerfalls, unter Aussendung von ionisierender Strahlung und Aussendung von Teilchen spontan in einen anderen Atomkern über. Im Folgenden werden die verschiedenen Arten radioaktiver Zerfälle erläutert.
 \subsubsection{$\alpha$-Zerfall}
@@ -165,7 +166,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  \subsubsection{Compton-Effekt}
  Beim Compton-Effekt trifft ein einfallendes $\gamma$-Quant auf ein freies oder nur leicht gebundenes Elektron und überträgt einen Teil seiner Energie auf dieses. Dieser Prozess findet meist bei Energien zwischen $200$ keV und $5$ MeV statt.
  \subsubsection{Paarbildung}
- Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar i.e. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
+ Bei der Paarbildung entsteht durch die Wechselwirkung des $\gamma$-Quants mit dem elektromagnetischen Feld des Atomkerns oder eines Elektrons ein Teilchen-Antiteilchen-Paar, z.B. Elektronen-Positronen-Paar.Paarbildung ist für Energien über $1,022$ MeV möglich. Die über diesen Grenzwert hinausgehende Energie wird auf die entstandenen Teilchen übertragen, der Imuls wird vom Kern aufgenommen. Da das Positron nicht lange alleine existieren kann, vereinigt es sich unter Abstrahlung von zwei $\gamma$-Quanten mit einem Elektron.
  \subsection{Messprinzip}
  \subsubsection{Messung der Zerfallsdauern}
  
@@ -176,7 +177,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
  Der radioaktive Zerfall ist ein statistischer Prozess (siehe \ref{zerfallsgesetz}), mit der Anzahl $N(t)$ der nach einer Zeit $t$ noch vorhandenen Kerne: $N(t)=N_0\exp({-\frac t \tau})$ Die gemessenen Zeiten $\Delta t$ folgen ebenso dieser Exponentialverteilung um die mittlere Lebensdauer $\tau$.
  Durch das Vertauschen von Start- und Stoppsignal wird diese Exponentialverteilung an der y-Achse gespiegelt, sodass erst durch Zeitverzögerung die Exponentialverteilung im positiven x-Achsen-Bereich  (und damit messbar) ist. Beim Messen der verzögerten Koinzidenzen erwarten wir demnach einen exponentiellen Anstieg.
  
- Nach diesem Anstieg sollten die Messwerte sofort auf Null, bzw. auf den Untergrund zurückfallen, da dies ein Stop- vor dem Startsignal bedeuten würde. Aufgrund unterschiedlicher Laufzeiten der Signale in den Kabeln und statistischer Fluktuationen in den Kabeln ist dieser Abfall aber nicht glatt sondern deutlich ausgeschmiert.
+ Nach diesem Anstieg sollten die Messwerte sofort auf Null, bzw. auf den Untergrund zurückfallen, da dies ein Stop- vor dem Startsignal bedeuten würde. Aufgrund unterschiedlicher Laufzeiten der Signale und statistischer Fluktuationen in den Kabeln und Geräten ist dieser Abfall aber nicht glatt sondern deutlich ausgeschmiert.
  
  \paragraph{Zufällige Koinzedenzen} Da das Start- und Stoppsignal am TAC nicht zwingend vom selben Kern, d.h. vom selben Zerfallsprozess, stammt müssen diese zufälligen Koinzidenzen, die einen Untergrund bei der Messung der verzögerten Koinzidenzen darstellen, ebenfalls gemessen werden. Diese Messung kann gleichzeitig mit der Messung der verzögerten Koinzidenzen durchgeführt werden, in dem der Delay (die Zeitverzögerung) so gewählt wird, dass der exponentielle Anstieg nur die erste Hälfte des Fensters einnimmt, sodass die zufälligen Koinzidenzen im letzten Viertel des Plots beobachtbar sind. 
  
@@ -189,7 +190,7 @@ Um $\gamma$-Strahlung detektieren zu können, muss die $\gamma$-Strahlung mit Ma
 
  
 \newpage
-\section[Versuchsaufbau- und Durchführung]{Versuchsaufbau- und Durchführung $^{\cite{anleitung}}$}
+\section[Versuchsaufbau- und Durchführung]{Versuchsaufbau- und Durchführung \cite{anleitung}}
 \subsection{Geräte}
 \paragraph{Detektor} Der Szintillator und der Photomultiplier bilden zusammen den Detektor.
 \paragraph{Main Amplifier (MA)}
@@ -197,20 +198,20 @@ Der Hauptverstärker  verstärkt das Spannungssignal rauscharm und erzeugt einen
 \paragraph{Multi Channel Analyser}
 Der Multi Channel Analyser ordnet jeden eingehenden Puls, abhängig von der Pulshöhe (also von der im Szintillator deponierten Ladungsmenge ) einem Channel zu. Das so erhaltene Energiespektrum kann als Histogramm dargestellt werden.
 \paragraph{Single Channel Analyser}
-Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV peak und dem $14,4$ keV peak angepasst werden (siehe \ref{Energiefenster})
-\paragraph{Time to Amplitude Converter (TAC)} Der Time to Amplitude Converter erzeugt einen in der Höhe  zur Zeitdifferenz zwischen Start- und Stoppsignal proportionalen Rechteckpuls. Ab Eingang des Startsignals wird hierzu ein Kondensator durch Anlegen eines konstanten Stroms aufgeladen. Das Stoppsignal stoppt den Aufladevorgang und wandelt den aufintegrierten Strom in ein Spannungssignal mit fester zeitlicher Länge um. Je nach Amplitude dieses Pulses wird das Signal nun auf die entsprechenden Channel des MCA verteilt. Um also später bei der Messung der verzögerten und zufälligen Koinzedenzen den einzelnen Channles Zeitdifferenzen zuordnen zu können muss eine Zeiteichung bei gleicher Channelanzahl durchgeführt werden. (siehe \ref{zeiteichung})
+Ein Single Channel Analyser selektiert aus eingehenden Signalen in dem nur für Energien in einem einstellbaren Energiefenster ein Ausgangspuls erzeugt wird.  Für die Messung der verzögerten und zufälligen Koinzedenzen sollen hier die Energiefenster dem $122$ keV Peak und dem $14,4$ keV Peak angepasst werden (siehe \ref{Energiefenster})
+\paragraph{Time to Amplitude Converter (TAC)} Der Time to Amplitude Converter erzeugt einen in der Höhe  zur Zeitdifferenz zwischen Start- und Stoppsignal proportionalen Rechteckpuls (siehe Abbildung \ref{tacbild}). Ab Eingang des Startsignals wird hierzu ein Kondensator durch Anlegen eines konstanten Stroms aufgeladen. Das Stoppsignal stoppt den Aufladevorgang und wandelt den aufintegrierten Strom in ein Spannungssignal mit fester zeitlicher Länge um. Je nach Amplitude dieses Pulses wird das Signal nun auf die entsprechenden Channel des MCA verteilt. Um also später bei der Messung der verzögerten und zufälligen Koinzedenzen den einzelnen Channles Zeitdifferenzen zuordnen zu können muss eine Zeiteichung bei gleicher Channelanzahl durchgeführt werden. (siehe \ref{zeiteichung})
 
 
-\gra[0.5]{TAC}{Funktionsweise des TAC $^{\cite{anleitung}}$}
+\gra[0.5]{TAC}{Funktionsweise des TAC \cite{anleitung}\label{tacbild}}
 
 
 
 \subsection{Aufnahme der Energiespektren}
 Zunächst werden die Energiespektren von Kobalt und Americium aufgenommen. Dabei muss das Spektrum jeweils von beiden Detektoren aufgenommen werden und zusätzlich beim Kobalt auch in beiden Orientierungen. So soll bestimmt werden, mit welchem Detektor nachher welcher Peak ($14,4$ keV bzw.$122$ keV) gemessen wird. Hierfür verwenden wir folgende Schaltung:
 \vskip 30 pt
-\gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren $^{\cite{anleitung}}$}
+\gra{Schaltung_1}{Versuchsaufbau 1: Aufnahme der Energiespektren \cite{anleitung}}
 
-Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Peaks des Americiumspektrums den einzelnen Zerfällen des Zerfallsschemas zugeordnet und so der Kalibrierungsfaktor zwischen der Energie und der Channelanzahl bestimmt. Dies dient dann zur Identifizierung der $^{57}$Fe-Peaks. Außerdem soll an Hand der Energiespektren der optimale Versuchsaufbau bestimmt werden, da z.B. die Erkennbarkeit des $14,4$ keV peak sehr verschieden ist.
+Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Peaks des Americiumspektrums den einzelnen Zerfällen des Zerfallsschemas zugeordnet und so der Kalibrierungsfaktor zwischen der Energie und der Channelanzahl bestimmt. Dies dient dann zur Identifizierung der $^{57}$Fe-Peaks. Außerdem soll an Hand der Energiespektren der optimale Versuchsaufbau bestimmt werden, da z.B. die Erkennbarkeit des $14,4$ keV Peak sehr verschieden ist.
 
 
 
@@ -220,15 +221,15 @@ Das Spektrum von $^{241}$Am dient zur Energiekalibrierung. Hierzu werden die Pea
 
 Im zweiten Teil des Versuchs sollen die Energiefenster an den Single Channel Analyzern eingestellt werden. Hierzu verwenden wir folgende Schaltung:
 
-\gra{Schaltung_2}{Versuchsaufbau 2: Einstellen der Energiefenster $^{\cite{anleitung}}$}
+\gra{Schaltung_2}{Versuchsaufbau 2: Einstellen der Energiefenster \cite{anleitung}}
 
 
-Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$ keV peaks (siehe \ref{Auswertung}) und setzen die Energiefenster der SCAs so, dass nur für den $122$ keV peak bzw. den $14,4$ keV peak ein Signal erzeugt wird.
+Anhand des Spektrums von  $^{241}$Am identifizieren wir die $122$ keV und $14,4$ keV Peaks (siehe \ref{Auswertung}) und setzen die Energiefenster der SCAs so, dass nur für den $122$ keV Peak bzw. den $14,4$ keV Peak ein Signal erzeugt wird.
 \subsection{Messung der verzögerten und zufälligen Koinzidenzen}
 Zur Messung der verzögerten und zufälligen Koinzedenzen werden die Einstellungen aus den vorherigen Teilen des Experiments übernommen. Wir verwenden hier folgende Schaltung:
 
 
-\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen $^{\cite{anleitung}}$}
+\gra{Schaltung_3}{Versuchsaufbau 3: Messen der verzögerten und zufälligen Koinzidenzen \cite{anleitung}}
 
 
 Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der exponentielle Anstieg zu sehen ist, im dritten Viertel der ausgeschmierte Abfall zu sehen ist und im letzten Viertel die zufälligen Koinzidenzen, d.h. der Untergrund zu sehen ist. Da wir die Hauptmessung über das Wochenende laufen lassen konnten, wählten wir eine Einstellung von 1024 Channels, da wir ausreichend Counts erwarteten, um mit mehr Channels eine höhere Genauigkeit zu erreichen.
@@ -236,41 +237,14 @@ Die Delay-Einstellung wird so gewählt, dass ca. in der ersten Hälfte der expon
 \subsection{Zeitkalibrierung des TAC} \label{zeiteichung}
 
 
-\gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung} $^{\cite{anleitung}}$} 
+\gra{Schaltung_4}{Versuchsaufbau 4: Zeitkalibrierung des TAC\label{zeitkalibrierung} \cite{anleitung}} 
 
 
 Zur Messung der Zeitkalibrierung des TAC wird das Signal eines SCA aufgeteilt und ein Zweig unverzögert als Startsignal an den TAC weitergeleitet während der zweite Zweig über die Delay-Box verzögert wird und als Stoppsignal an den TAC angelegt wird. Wir erhalten so durch Einstellen verschiedener Delay-Zeiten Channel-Zeit-Paare, mit denen die Zeitkalibrierung durchgeführt wird.
 Zu beachten ist hierbei, dass die gleiche Channel-Anzahl wie beim vorherigen Versuchsteil gewählt wird.
 Der Versuchsaufbau zu dieser Messung ist in Abbildung \ref{zeitkalibrierung} dargestellt.
 
-\subsection{Messeinstellungen}
 
-\begin{align*}
-\textbf{Amplifier 1}\\
-\text{Amplifier gain: } & 0.87\\
-\text{Coarse gain: } & 200\\
-\text{Shaping time: } & 0.5\mu s\\
-\textbf{SCA 1}\\
-\text{Upper Level: } & 4.5\\
-\text{Lower Level: } & 3.5\\
-\text{Delay: } & 0.0\\
-\textbf{Amplifier 2}\\
-\text{Amplifier gain: } & 0.50\\
-\text{Coarse gain: } & 200\\
-\text{Shaping time: } & 0.5\mu s\\
-\textbf{SCA 2}\\
-\text{Upper Level: } & 0.7\\
-\text{Lower Level: } & 0.3\\
-\text{Delay: } & 1.0\\
-\textbf{TAC}\\
-\text{Rangel: } & 0.05\mu s\\
-\text{Amplitude: } & 5 v\\
-\text{Multiplier: } & \times 10\\
-\textbf{Delay}\\
-\text{Delay 1: } & 0.05\mu s\\
-\text{Delay 2: } & 5 v\\
-\text{Delay 3: } & \times 10\\
-\end{align*}
 
 
 \newpage
@@ -280,7 +254,7 @@ Wir haben für die Auswertung des Versuchs die Programmiersprache R verwendet.
 
 \subsection{Energiespektren}
 
-\paragraph{Energiekalibration} Wir haben zunächst die Peaks des $^{241}$Am - Spektrums für beide Detektoren mit Hilfe von Gauß-fits bestimmt.
+\paragraph{Energiekalibration} Wir haben zunächst die Peaks des $^{241}$Am - Spektrums für beide Detektoren mit Hilfe von Gauß-Fits bestimmt.
 
 
 \gra[0.8]{Americium}{$^{241}$Am - Spektren mit Gauß-Fit}
@@ -317,7 +291,7 @@ Peak 3&
 
 Diese Peaks werden nun an Hand des Zerfallsschemas von $^{241}$Am (Abbildung 8) den entprechenden Energien zugeordnet:
 
-\gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am $^{\cite{anleitung}}$}
+\gra[0.5]{Zerfall_Americium}{Zerfallsschema von $^{241}$Am \cite{anleitung}}
 
 
 Die Peaks sind damit den Energien $26.3$ keV, $33.2$ keV und $59.5$ keV zuzuordnen. Wir können nun für beide Szintillatoren die Energiekalibrierung durchführen. Dazu führen wir für die erhaltenen Energie-Channel-Paare einen Linearen Fit durch:
@@ -373,48 +347,15 @@ Wir tragen nun die Kobaltpaks mit Literatur-Energiewert($122$ keV bzw. $14.4$ ke
 Anhand von Abbildung 13 stellen wir fest, dass die Kobaltpeaks im Rahmen von zwei Standardabweichungen alle auf der Geraden liegen. Wir haben hier die die Fehler des Linearen Fits berücksichtigt, indem wir die steilste und flachste Ausgleichsgerqade in blau eingezeichnet haben. Für den linken Szintillator stimmen die Kobabltpeaks sogar innerhalb einer Standardabweichung mit der Geraden überein. Die größere Abweichung beim rechten Szintillator lässt sich durch die sehr kleinen Fehler der linearen Regression erklären, die bei drei Werten eher zufällig enstanden sein können und nicht den realen Fehlern entsprechen. Hierfür spricht auch, dass die einzelnen Punkte zunächst ähnliche Abweichungen wie beim linken Szintillator zeigen. Da die Energiekalibrierung nur für das Einstellen der Energiefenster wichtig ist, ist sie daher vollkommen ausreichend.
 Für die nächsten Versuchsteile verwenden wir Orienierung 1 der Probe und messen den $14.4$ keV-Peak mit dem rechten Szintillator und den $122$ keV-Peak mit dem linken Oszillator.
 \newpage
-\subsection{Energiefenster}
-
-Beim Setzen der Energiefenster haben wir folgende Einstellungen gewählt:
-
-\paragraph{Linker Szintillator ($122$ keV-Peak)}
-\ \\
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{c|c}
-Upper Level & 4.5\\\hline
-Lower Level & 3.5 
-\end{tabular}
-
-\end{table}
-
-
-
-\gra[0.6]{energiefenster_links}{Setzen des Energiefensters Linker Szintillator}
-
-\paragraph{Rechter Szintillator ($14.4$ keV-Peak)}
-\ \\
-\begin{table}[h!]
-\centering
-\begin{tabular}{c|c}
-Upper Level & 0.7\\\hline
-Lower Level & 0.3 
-\end{tabular}
-
-\end{table}
-
-
-\gra[0.6]{energiefenster_rechts}{Setzen des Energiefensters Rechter Szintillator}
 
 \subsection{Hauptmessung}
 \subsubsection{Multi-Exponentialfit}
 \gra[1]{original}{Messdaten der Hauptmessung\label{original}}
-In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Wir haben dabei die ersten 50 Channel vernachlässigt, da wir in diesem Bereich mehrere Ausreißer beobachten konnten. Über die Zeitkalibrierung können die Channel später in Zeiten umgerechnet werden.
+In Abbildung \ref{original} sind die Messdaten der Hauptmessung als Counts über Channel aufgetragen. Wir haben dabei die ersten 50 Channel vernachlässigt, da wir in diesem Bereich mehrere Ausreißer beobachten konnten (siehe \ref{Diskussion}). Über die Zeitkalibrierung können die Channel später in Zeiten umgerechnet werden.
 
 Man sieht hier in der ersten Hälfte der Daten den erwarteten exponentiellen Verlauf. Im dritten Viertel sieht man den ausgeschmierten Abfall und im letzten Viertel sieht man den Untergrund der zufälligen Koinzidenzen.
 
-Um aus dem exponentiellen Verlauf der Daten in der ersten Hälfte nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit (siehe \ref{auswertung2},\ref{multiexpfit}), da dies eine höhere Genauigkeit als ein einzelner Fit liefert und durch die starke Streuung der Daten die Fitgrenzen nicht eindeutig erscheinen. Dieser besteht aus vielen Exponentialfits (siehe \ref{expfit}) mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
+Um aus dem exponentiellen Verlauf der Daten in der ersten Hälfte nun die Halbwertszeit zu berechnen, machen wir einen Multi-Exponentialfit (siehe \ref{auswertung2}), da dies eine höhere Genauigkeit als ein einzelner Fit liefert und durch die starke Streuung der Daten die Fitgrenzen nicht eindeutig erscheinen. Dieser besteht aus vielen Exponentialfits (siehe \ref{expfit}) mit unterschiedlichen Fit-Intervallen. Wir gehen hierbei alle möglichen zusammenhängenden Intervalle mit mindestens 50 enthaltenen Elementen innerhalb eines Bereiches von ca. 100-500 durch und fitten in jedem Intervall eine Exponentialkurve an die Daten. Die daraus erhaltenen Zerfallskonstanten sind nun nach dem zentralen Grenzwertsatz gaußverteilt, woraus sich dann die Zerfallskonstante ermitteln lässt.
 
 Bei der Durchführung des Multi-Exponentialfits haben wir nun festgestellt, dass sehr viele der Fits fehlschlagen. Dies ist vermutlich auf die sehr große Streuung der Datenpunkte zurückzuführen. Eine geringere Streuung der Datenpunkte lässt sich durch einen Rebin erhalten.
 
@@ -424,7 +365,7 @@ Nach einem Rebin verbesserte sich die Situation, es schlugen aber noch ca. 10\% 
 \gra[1]{Rebin}{a) Ergebnisse der Hauptmessung b) Ergebnisse der Hauptmessung mit Rebin auf 256 Kanäle\label{rebin}}
 \subsubsection{Gauß-Fit}
 \gra[1]{lambdagausfit}{Verteilung der Zerfallskonstanten mit gefitteter Gauß-Funktion\label{gaus}}
-In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten (siehe \ref{gausfit}) erhält man nun den Mittelwert und die Standardabweichung  der Zerfallskonstanten, die wir als Fehler des Mittelwertes angeben. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=(60\pm20)\,\text{Channel}_\text{Rebin}=(240\pm80)\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
+In Abbildung \ref{gaus} ist die Verteilung der berechneten Zerfallskonstanten der einzelnen Exponentialfits aufgetragen. Durch Fitten einer Gauß-Funktion an diese Daten (siehe \ref{expfit}) erhält man nun den Mittelwert und die Standardabweichung  der Zerfallskonstanten, die wir als Fehler des Mittelwertes angeben. Die Zerfallskonstante beträgt $\lambda=(0,012\pm0,004)\, \frac1{\text{Channel}_\text{Rebin}}=(0,0029\pm0,0010)\, \frac1{\text{Channel}}$. Der Fehler hierzu folgt aus der Breite der Gaußverteilung. Die Halbwertszeit beträgt also $T_{\frac12}=\frac{\ln2}{\lambda}=(60\pm20)\,\text{Channel}_\text{Rebin}=(240\pm80)\,\text{Channel}$, wobei der Fehler mit Gauß'scher Fehlerfortpflanzung berechnet wurde. Nach der Zeitkalibrierung lässt sich dies in Nanosekunden umrechnen.
 
 \subsubsection{Konstanten und gefittete Funktion} Die gefittete Funktion lautet $f(x)=A+B\cdot\exp(\lambda x)$. Es werden also eine additive und eine multiplikative Konstante bestimmt (siehe \ref{auswertung2}). Die additive Konstante entspricht dem Untergrund der zufälligen Koinzidenzen (siehe \ref{untergrund}). Die multiplikative Konstante passt die Kurve an die Anzahl der Datenpunkte an. Durch den Gaußfit wird nun die Zerfallskonstante $\lambda$ berechnet, zum Plotten der Kurve fehlen nun allerdings noch die Konstanten. Diese werden nun bestimmt, indem wir von den Konstanten der Fits, von welchen sich $\lambda$ im Intervall $[\lambda_{\text{fit}}-\frac\sigma5,\lambda_{\text{fit}}+\frac\sigma5]$ befinden, die Mittelwerte bilden. Mit den statistischen Fehlern erhalten wir nun für die Konstanten folgende Werte:
 \begin{align*}
@@ -443,7 +384,7 @@ Ebenfalls in der Hauptmessung haben wir die Untergrundmessung durchgeführt. Die
 \subsubsection{Multi-Linearfit}
 \gra[0.9]{log}{Logarithmischer Auftrag der Daten}
 \gra[0.9]{log_untergrund}{Logarithmischer Auftrag der Daten mit abgezogenem Untergrund}
-Eine zweite Möglichkeit ist es, die Daten logarithmisch aufzutragen. Da die Daten ungefähr der Funktion $f(x)=A+B\cdot e^{\lambda x}$ entsprechen und $\log{f(x)}=log(A+B\cdot e^{\lambda x})$ gilt, folgt nach vorigem Abziehen des gemessenen Untergrunds A: $\log{f'(x)}=B'+\lambda x$. Also lässt sich durch Fitten einer Geraden an die logarithmierten Daten ebenfalls die Zerfallskonstante berechnen. Dies machen wir analog zum Multi-Exponentialfit mit einem Multi-Linearfit (siehe \ref{auswertung3}). Dazu wählen wir nach Augenmaß den Bereich von Channel $80$ bis $520$ und machen innerhalb dieses Bereiches Fits in allen Intervallen mit mindestens 50 Elementen. Dies sind insgesamt $76636$ Linearfits.\\
+Eine zweite Möglichkeit ist es, die Daten logarithmisch aufzutragen. Da die Daten ungefähr der Funktion $f(x)=A+B\cdot e^{\lambda x}$ entsprechen und $\log{f(x)}=\log(A+B\cdot e^{\lambda x})$ gilt, folgt nach vorigem Abziehen des gemessenen Untergrunds A: $\log{f'(x)}=B'+\lambda x$. Also lässt sich durch Fitten einer Geraden an die logarithmierten Daten ebenfalls die Zerfallskonstante berechnen. Dies machen wir analog zum Multi-Exponentialfit mit einem Multi-Linearfit (siehe \ref{auswertung3}). Dazu wählen wir nach Augenmaß den Bereich von Channel $80$ bis $520$ und machen innerhalb dieses Bereiches Fits in allen Intervallen mit mindestens 50 Elementen. Dies sind insgesamt $76636$ Linearfits.\\
 \gra[1]{lineargaus}{Verteilung der gefitteten Zerfallskonstanten mit gefitteter Gaußfunktion\label{lineargaus}}
 Aus der Gaußverteilung in Abbildung \ref{lineargaus} kriegt man für die Zerfallskonstante folgenden Wert: $\lambda=(0,00341\pm0,00017) \,\frac1{\text{Channel}}$
 
@@ -457,7 +398,7 @@ Wir tragen zunächst alle Messpunkte graphisch auf:
 
 \gra[0.68]{Messpunkte_TAC}{Messpunkte der Zeitkalibrierung des TAC}
  
-Wir beobachten, dass es sich bei dem Messpunkt ($39$ Channel/$2.5$ ns) offenbar um einen Ausreißerpunkt handelt. Mögliche Ursache hierfür sind unerkannte systematische Fehler die für kleine Verzögerungen eine größere Rolle spielen. Da wir die Hauptmessung bei einer Verzögerung von 166ns durchführen, und uns daher das Verhalten für größere Verzögerungen interessiert, vernachlässigen wir diesen Punkt für die Lineare Regression.
+Wir beobachten, dass es sich bei dem Messpunkt ($39$ Channel/$2.5$ ns) offenbar um einen Ausreißerpunkt handelt. Mögliche Ursache hierfür sind unerkannte systematische Fehler die für kleine Verzögerungen eine größere Rolle spielen. Auch könnte hierfür eine Rolle spielen, dass der TAC aus einem Kondensator besteht. Da wir die Hauptmessung bei einer Verzögerung von 166ns durchführen, und uns daher das Verhalten für größere Verzögerungen interessiert, vernachlässigen wir diesen Punkt für die Lineare Regression.
 
 
 \gra[0.68]{Fit_TAC}{Zeitkalibrierung des TAC}
@@ -523,14 +464,14 @@ Multi-Linearfit:
 T_{\frac12} = 104 \pm 6 \text{ ns}
 \end{align*}
 
-Literaturwert: $^{\cite{anleitung}}$
+Literaturwert: \cite{anleitung}
 
 \begin{align*}
 T_{\frac12} = 98 \text{ ns}
 \end{align*}
 
 
-\subsection{Diskussion}
+\subsection{Diskussion}\label{Diskussion}
 
 Bei den Zeitmessungen (Hauptmessung und TAC-Kalibrierung) stellten wir für kleine Zeiten vermehrt Ausreißer fest. Interessant ist, dass dies für beide Zeitmessungen auftrat, was den Verdacht eines unerkannten systematischen Fehlers für kleine Zeiten nahe legt. Ursache hierfür könnten Fehler durch die Kabel oder Geräte sein, obwohl wir für durch die Kabel verursachten Fehler ein konstanten Offset erwarten würden. Beispielsweise wäre es denkbar, dass sich mit dem TAC auf Grund seiner Bauweise sehr kleine Zeiten weniger genau messen lassen.
 \\\ \\
@@ -539,6 +480,72 @@ Dabei fällt allerdings auf, dass der Multi-Linearfit einen deutlich besseren un
 
 \newpage
 \section{Anhang}
+
+\subsection{Messeinstellungen}
+Wir haben folgende Einstellungen für die Messungen verwendet:
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{r|cc}
+		\textbf{Amplifier}&Linker Szintillator&Rechter Szintillator \\\hline
+		Amplifier gain:  & 0.87 & 0.50\\
+		Coarse gain:  & 200 & 200\\
+		Shaping time:  & $0.5\,\mu s$ & $0.5\,\mu s$\\
+	\end{tabular}\\\vskip 20 pt
+	\begin{tabular}{r|cc}
+		\textbf{SCA}&Linker Szintillator&Rechter Szintillator \\\hline
+		Upper Level:  & 4.5 & 0.7\\
+		Lower Level:  & 3.5 & 0.3\\
+		Delay:  & 0.0 & 1.0\\
+	\end{tabular}\\\vskip 20 pt
+	\begin{tabular}{r|c}
+		\textbf{TAC}&\\\hline
+		Range:  & 0.05 $\mu s$ \\
+		Amplitude:  & 5 v \\
+		Multiplier:  & $\times 10$ \\
+	\end{tabular}\\\vskip 20 pt
+	\begin{tabular}{r|c}
+		\textbf{Delay}&\\\hline
+		Delay 1:  & 66 ns \\
+		Delay 2:  & 66 ns \\
+		Delay 3:  & 34 ns \\
+	\end{tabular}
+\end{table}
+
+\subsection{Energiefenster}
+
+Beim Setzen der Energiefenster haben wir folgende Einstellungen gewählt:
+
+\paragraph{Linker Szintillator ($122$ keV-Peak)}
+\ \\
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c}
+		Upper Level & 4.5\\\hline
+		Lower Level & 3.5 
+	\end{tabular}
+	
+\end{table}
+
+
+
+\gra[0.6]{energiefenster_links}{Setzen des Energiefensters Linker Szintillator}
+
+\paragraph{Rechter Szintillator ($14.4$ keV-Peak)}
+\ \\
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c}
+		Upper Level & 0.7\\\hline
+		Lower Level & 0.3 
+	\end{tabular}
+	
+\end{table}
+
+
+\gra[0.6]{energiefenster_rechts}{Setzen des Energiefensters Rechter Szintillator}
+
+
 
 \subsection{Sourcecode}
 \subsubsection*{auswertung.R}\label{auswertung1r}
